@@ -1,0 +1,493 @@
+/* ========================================
+   PROFILE MENU CONTAINER & TRIGGER
+   ======================================== */
+
+.profile-menu-container {
+  position: relative;
+}
+
+.profile-menu-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.profile-menu-trigger:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.profile-menu-trigger:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #2563eb;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.user-role {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.chevron-icon {
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon.open {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   PROFILE MENU DROPDOWN
+   ======================================== */
+
+.profile-menu-dropdown-wrapper {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1000;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-menu-dropdown {
+  width: 288px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1),
+              0 10px 10px -5px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+/* ========================================
+   PROFILE HEADER
+   ======================================== */
+
+.profile-dropdown-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 20px;
+}
+
+.profile-header-content {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.profile-avatar-ring {
+  position: relative;
+  flex: none;
+}
+
+.profile-avatar-ring::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  z-index: -1;
+}
+
+.avatar-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: block;
+  border: 3px solid #0f172a;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 3px solid #0f172a;
+}
+
+.profile-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-name {
+  margin: 0 0 2px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.profile-email {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  font-size: 11px;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.profile-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ========================================
+   STATS ROW
+   ======================================== */
+
+.profile-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.stat-mini-card {
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.15s ease;
+}
+
+.stat-mini-card:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* ========================================
+   MENU ITEMS
+   ======================================== */
+
+.profile-menu-items {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 0;
+}
+
+.profile-menu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.profile-menu-item:hover {
+  background: #f8fafc;
+}
+
+.profile-menu-item:focus {
+  outline: none;
+  background: #f1f5f9;
+}
+
+.menu-item-icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.menu-item-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.account-icon {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.tenant-icon {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.activity-icon {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+.notification-icon {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.menu-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.menu-item-subtitle {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 2px 0 0;
+}
+
+.tenant-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(34, 197, 94, 0.1);
+  font-size: 11px;
+  font-weight: 500;
+  color: #22c55e;
+  margin-top: 4px;
+}
+
+.tenant-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.menu-item-chevron {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  color: #cbd5e1;
+  margin-top: 2px;
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+
+.profile-menu-item:hover .menu-item-chevron {
+  opacity: 1;
+  color: #94a3b8;
+}
+
+/* ========================================
+   DIVIDER
+   ======================================== */
+
+.profile-menu-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0;
+}
+
+/* ========================================
+   SIGN OUT SECTION
+   ======================================== */
+
+.profile-sign-out-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: rgba(220, 38, 38, 0.05);
+  margin: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.profile-sign-out-item:hover {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.profile-sign-out-item:focus {
+  outline: none;
+  background: rgba(220, 38, 38, 0.15);
+}
+
+.signout-icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+  font-size: 16px;
+}
+
+.signout-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.signout-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.signout-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #dc2626;
+  margin: 0;
+}
+
+.signout-subtitle {
+  font-size: 12px;
+  color: #b91c1c;
+  margin: 2px 0 0;
+  opacity: 0.9;
+}
+
+.signout-chevron {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  color: #dc2626;
+  margin-top: 2px;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+
+.profile-sign-out-item:hover .signout-chevron {
+  opacity: 1;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 480px) {
+  .profile-menu-dropdown {
+    width: calc(100vw - 32px);
+    max-width: 288px;
+  }
+
+  .profile-menu-dropdown-wrapper {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    top: auto;
+    bottom: auto;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.profile-menu-trigger:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.profile-menu-item:focus-visible,
+.profile-sign-out-item:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profile-menu-dropdown {
+  animation: fadeIn 0.2s ease;
+}

@@ -1,0 +1,595 @@
+/* Create Application Page Styles */
+
+/* Header */
+.create-app-header {
+  padding: 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.create-app-header .header-title-section {
+  max-width: 100%;
+}
+
+.create-app-header .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.create-app-header .page-subtitle {
+  font-size: 14px;
+  color: #4B5563;
+  margin: 8px 0 0 0;
+  line-height: 1.5;
+}
+
+/* Breadcrumb */
+.create-app-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  padding: 16px 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.breadcrumb-link {
+  color: #2563EB;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #1D4ED8;
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: #D1D5DB;
+  margin: 0 4px;
+}
+
+.breadcrumb-current {
+  color: #6B7280;
+}
+
+/* Step Progress Container */
+.create-app-progress-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+/* Step Progress */
+.step-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.step-progress-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 1;
+}
+
+/* Step Circle */
+.step-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #F3F4F6;
+  border: 2px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.step-circle.active {
+  background: #F0A83C;
+  border-color: #F0A83C;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(240, 168, 60, 0.3);
+}
+
+.step-circle.completed {
+  background: #D1D5DB;
+  border-color: #D1D5DB;
+  color: #FFFFFF;
+}
+
+.step-checkmark {
+  font-size: 18px;
+}
+
+.step-number {
+  font-size: 18px;
+}
+
+/* Step Label */
+.step-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4B5563;
+  text-align: center;
+}
+
+.step-circle.active ~ .step-label {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Step Connector */
+.step-connector {
+  position: absolute;
+  height: 2px;
+  background: #E5E7EB;
+  top: 24px;
+  left: calc(50% + 24px);
+  right: calc(-50% - 24px);
+  transition: background 0.2s ease;
+}
+
+.step-connector.completed {
+  background: #D1D5DB;
+}
+
+/* Content */
+.create-app-content {
+  padding: 40px 24px;
+  background: #F9FAFB;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 300px);
+}
+
+/* Application Details Form */
+.application-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 680px;
+}
+
+/* Form Card */
+.form-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-card-header {
+  margin-bottom: 28px;
+}
+
+.form-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.form-card-subtitle {
+  font-size: 14px;
+  color: #4B5563;
+  margin: 0;
+}
+
+/* Form Fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Form Label */
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.required {
+  color: #EF4444;
+}
+
+.optional {
+  color: #6B7280;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* Form Input */
+.form-input {
+  padding: 10px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9CA3AF;
+}
+
+.form-input.error {
+  border-color: #EF4444;
+}
+
+.form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Form Helper Text */
+.form-helper-text {
+  font-size: 12px;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* Form Error */
+.form-error {
+  font-size: 12px;
+  color: #EF4444;
+  margin: 0;
+}
+
+/* Application Type Grid */
+.app-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Application Type Card */
+.app-type-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1.5px solid #E5E7EB;
+  background: #FFFFFF;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.app-type-card:hover {
+  border-color: #D1D5DB;
+  background: #F9FAFB;
+}
+
+.app-type-card.selected {
+  border-color: #2563EB;
+  background: #EFF6FF;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.app-type-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.app-type-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-type-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.app-type-subtitle {
+  font-size: 12px;
+  color: #6B7280;
+  margin: 4px 0 0 0;
+}
+
+/* Form Textarea */
+.form-textarea {
+  padding: 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  resize: vertical;
+  transition: all 0.2s ease;
+  line-height: 1.5;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-textarea::placeholder {
+  color: #9CA3AF;
+}
+
+/* Logo Upload Container */
+.logo-upload-container {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.logo-placeholder {
+  width: 56px;
+  height: 56px;
+  background: #E5E7EB;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+.logo-upload-content {
+  flex: 1;
+}
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4B5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.upload-btn:hover {
+  border-color: #9CA3AF;
+  background: #F3F4F6;
+  color: #111827;
+}
+
+/* Form Footer */
+.form-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* Form Buttons */
+.form-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.cancel-btn {
+  background: #FFFFFF;
+  color: #4B5563;
+  border: 1px solid #D1D5DB;
+}
+
+.cancel-btn:hover {
+  background: #F9FAFB;
+  color: #111827;
+  border-color: #9CA3AF;
+}
+
+.next-btn {
+  background: #F0A83C;
+  color: #0F2C45;
+}
+
+.next-btn:hover {
+  background: #E8A035;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(240, 168, 60, 0.25);
+}
+
+.next-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+
+.mobile-menu-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-right: 12px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 900;
+}
+
+.mobile-menu-button:hover {
+  background: #f3f4f6;
+  color: #000000;
+  border-color: #d1d5db;
+}
+
+.mobile-menu-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  animation: fadeIn 0.2s ease;
+  cursor: pointer;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .step-progress {
+    gap: 12px;
+  }
+
+  .step-circle {
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .step-label {
+    font-size: 12px;
+  }
+
+  .step-connector {
+    top: 22px;
+    left: calc(50% + 22px);
+    right: calc(-50% - 22px);
+  }
+
+  .app-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 24px;
+  }
+
+  .form-footer {
+    flex-direction: column-reverse;
+  }
+
+  .form-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .create-app-header {
+    padding: 16px;
+  }
+
+  .create-app-header .page-title {
+    font-size: 22px;
+  }
+
+  .create-app-breadcrumb {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .create-app-progress-container {
+    padding: 16px;
+  }
+
+  .create-app-content {
+    padding: 16px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+
+  .form-card-title {
+    font-size: 16px;
+  }
+
+  .form-fields {
+    gap: 20px;
+  }
+
+  .logo-upload-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

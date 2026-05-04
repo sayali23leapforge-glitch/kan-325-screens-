@@ -1,0 +1,151 @@
+/* Product Overview Tab Styles */
+
+.pam-overview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Two-column grid layout */
+.pam-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Overview Card */
+.pam-overview-card {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pam-overview-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  padding: 0;
+}
+
+/* Field Group */
+.pam-overview-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Individual Field */
+.pam-overview-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pam-overview-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pam-overview-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  padding: 10px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background: #FFFFFF;
+  line-height: 1.5;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.pam-overview-value.status-active {
+  background: #ECFDF5;
+  color: #047857;
+  border-color: #D1FAE5;
+  font-weight: 600;
+  justify-content: center;
+}
+
+/* Usage Statistics List */
+.pam-overview-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pam-overview-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.pam-overview-stat-row:last-child {
+  border-bottom: none;
+}
+
+.pam-stat-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+.pam-stat-num {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pam-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pam-overview-card {
+    padding: 16px;
+  }
+
+  .pam-overview-field-group {
+    gap: 12px;
+  }
+
+  .pam-overview-field {
+    gap: 4px;
+  }
+
+  .pam-overview-card-title {
+    font-size: 14px;
+  }
+
+  .pam-overview-value {
+    font-size: 13px;
+    padding: 8px 10px;
+    min-height: 36px;
+  }
+
+  .pam-overview-stat-row {
+    padding: 12px 0;
+  }
+
+  .pam-stat-name {
+    font-size: 12px;
+  }
+
+  .pam-stat-num {
+    font-size: 14px;
+  }
+}

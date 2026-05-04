@@ -1,0 +1,504 @@
+/* Create Tenant Page Styles */
+
+.create-tenant-main {
+  width: 100%;
+  background: #F9FAFB;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Header Section */
+.create-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  padding: 0;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background: #F3F4F6;
+}
+
+.create-title {
+  font-size: 23.04px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.create-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.44px;
+  color: #2563EB;
+  margin-top: 4px;
+}
+
+.breadcrumb-item {
+  color: #2563EB;
+  font-size: 13.44px;
+  font-weight: 500;
+}
+
+.breadcrumb-item.current {
+  color: #4B5563;
+  font-weight: 400;
+}
+
+.breadcrumb-divider {
+  color: #9CA3AF;
+  margin: 0 4px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: auto;
+  align-self: center;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  background: #F3F4F6;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  position: relative;
+}
+
+.icon-btn.notifications .notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  background: #EF4444;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.btn-cancel {
+  background: #E5E7EB;
+  color: #4B5563;
+  border: none;
+}
+
+.btn-cancel:hover {
+  background: #D1D5DB;
+}
+
+.btn-primary {
+  background: #2563EB;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1D4ED8;
+}
+
+.btn-draft {
+  background: transparent;
+  color: #4B5563;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+/* Main Content */
+.create-content {
+  padding: 32px 152px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Setup Progress */
+.setup-progress {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  padding: 33px 32px;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.progress-title {
+  font-size: 17.28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 30px 0;
+  flex-basis: 100%;
+}
+
+.progress-step-info {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  font-size: 13.44px;
+  color: #4B5563;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.progress-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 0;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 0 1 auto;
+  position: relative;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.step-circle {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.44px;
+  font-weight: 600;
+  color: #4B5563;
+  flex-shrink: 0;
+}
+
+.step-circle.active {
+  background: #2563EB;
+  color: white;
+}
+
+.step-circle.completed {
+  background: #2563EB;
+  color: white;
+}
+
+.step-label {
+  font-size: 13.44px;
+  font-weight: 500;
+  color: #6B7280;
+  margin-left: 0;
+  white-space: nowrap;
+}
+
+.step-content .step-circle.active ~ .step-label {
+  color: #2563EB;
+}
+
+.step-divider {
+  width: 38px;
+  height: 2px;
+  background: #E5E7EB;
+  margin: 0 12px;
+  flex-shrink: 0;
+  display: block;
+  align-self: center;
+}
+
+/* Form Section */
+/* Form Section */
+.form-section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 23.04px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 10px 0;
+  padding: 33px 32px 0 32px;
+}
+
+.form-subtitle {
+  font-size: 15.36px;
+  color: #4B5563;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  padding: 0 32px;
+}
+
+.form-content {
+  margin-bottom: 0;
+  padding: 0 32px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.form-row .form-group {
+  margin-bottom: 0;
+}
+
+.form-label {
+  font-size: 13.44px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  padding: 12px 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 15.36px;
+  font-family: 'Inter', sans-serif;
+  background: white;
+  color: #111827;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-help {
+  font-size: 11.52px;
+  color: #6B7280;
+  margin: 8px 0 0 0;
+  font-weight: 400;
+}
+
+/* Admin Section */
+.admin-section {
+  padding-top: 30px;
+  border-top: 1px solid #E5E7EB;
+  margin-bottom: 30px;
+}
+
+.admin-title {
+  font-size: 17.28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 20px 0;
+}
+
+/* Form Footer */
+.form-footer {
+  background: #F9FAFB;
+  border-top: 1px solid #E5E7EB;
+  padding: 30px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 32px 0 32px;
+}
+
+.required-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.44px;
+  color: #4B5563;
+  font-weight: 400;
+}
+
+.notice-icon {
+  width: 13px;
+  height: 13px;
+  background: #4B5563;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #4B5563;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Setup Tips */
+.setup-tips-wrapper {
+  padding: 30px 32px;
+  background: transparent;
+}
+
+.setup-tips {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.tips-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563EB;
+}
+
+.tips-content {
+  flex: 1;
+}
+
+.tips-title {
+  font-size: 13.44px;
+  font-weight: 600;
+  color: #1E3A8A;
+  margin: 0 0 15px 0;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  font-size: 13.44px;
+  color: #1E40AF;
+  font-weight: 400;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.tips-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .setup-tips {
+    flex-direction: column;
+  }
+}

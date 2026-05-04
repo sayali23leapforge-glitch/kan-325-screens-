@@ -1,0 +1,686 @@
+/* ===== ROLE SAVE SUCCESS PAGE - CENTERED NARROW LAYOUT ===== */
+
+.rss-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #F3F4F6;
+}
+
+.rss-page-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 0;
+}
+
+/* ===== HEADER ===== */
+.rss-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 276.48px;
+  right: 0;
+  height: 70.25px;
+  background: white;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 40;
+  gap: 16px;
+}
+
+.rss-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.rss-back-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.rss-back-btn:hover {
+  background: #F9FAFB;
+}
+
+.rss-header-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.rss-breadcrumb {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 10px;
+  white-space: nowrap;
+  min-width: 300px;
+}
+
+.rss-breadcrumb-link {
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.rss-breadcrumb-sep {
+  color: #D1D5DB;
+  padding: 0 2px;
+}
+
+.rss-breadcrumb-text {
+  color: #6B7280;
+  padding: 0 4px;
+}
+
+.rss-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.rss-notification-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.rss-notification-btn:hover {
+  background: #F9FAFB;
+}
+
+.rss-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  background: #EF4444;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  border: 1px solid white;
+}
+
+.rss-btn-new-role {
+  padding: 8px 16px;
+  background: #F0A83C;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0F2C45;
+  transition: all 0.2s ease;
+}
+
+.rss-btn-new-role:hover {
+  background: #E89B24;
+}
+
+/* ===== CONTENT WRAPPER - CENTERED NARROW COLUMN ===== */
+.rss-content-wrapper {
+  margin-top: 70.25px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F3F4F6;
+  min-height: calc(100vh - 70.25px);
+}
+
+.rss-content-wrapper > * {
+  width: 100%;
+  max-width: 747.28px;
+}
+
+.rss-content-wrapper > :not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* ===== MAIN SUCCESS CARD ===== */
+.rss-success-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* ===== HERO SECTION - INSIDE CARD ===== */
+.rss-hero-section {
+  background: linear-gradient(to right, #10B981 0%, #059669 100%);
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.rss-hero-icon {
+  width: 56px;
+  height: 56px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #10B981;
+  font-size: 40px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+}
+
+.rss-hero-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.rss-hero-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+}
+
+/* ===== ROLE DETAILS SECTION ===== */
+.rss-details-section {
+  background: #F9FAFB;
+  padding: 23.04px;
+  border-radius: 7.68px;
+  display: flex;
+  flex-direction: column;
+  gap: 34.56px;
+}
+
+.rss-details-header {
+  display: flex;
+  align-items: center;
+  gap: 23.02px;
+  height: 23.02px;
+  width: 100%;
+}
+
+.rss-details-icon {
+  width: 15.35px;
+  height: 15.35px;
+  color: #2563EB;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rss-details-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 23.04px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.rss-details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 18.43px;
+  gap: 20px;
+}
+
+.rss-detail-label {
+  font-size: 15.36px;
+  font-weight: 400;
+  color: #4B5563;
+  line-height: 23.04px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  flex-shrink: 0;
+}
+
+.rss-detail-value {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 23.04px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-align: right;
+}
+
+.rss-detail-blue {
+  color: #2563EB;
+}
+
+.rss-detail-status-badge {
+  background: #DCFCE7;
+  color: #166534;
+  padding: 4.99px 11.52px;
+  border-radius: 9599.04px;
+  font-size: 13.44px;
+  font-weight: 500;
+  line-height: 19.20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  height: 26.87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== AUDIT LOG SECTION ===== */
+.rss-audit-log-section {
+  background: #EFF6FF;
+  border-radius: 7.68px;
+  outline: 0.96px #BFDBFE solid;
+  outline-offset: -0.96px;
+  padding: 23.13px 16.50px 23.13px 42.40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  min-height: 80px;
+}
+
+.rss-audit-log-icon {
+  width: 14.38px;
+  height: 19.19px;
+  color: #2563EB;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rss-audit-log-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rss-audit-log-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #1E3A8A;
+  margin: 0;
+  line-height: 23.04px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.rss-audit-log-text {
+  font-size: 13.44px;
+  color: #1E40AF;
+  margin: 0;
+  line-height: 19.20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+}
+
+.rss-audit-log-text strong {
+  font-weight: 600;
+  color: #1E40AF;
+}
+
+/* ===== SECTION SUBTITLE (for Permission Summary & Next Steps) ===== */
+.rss-section-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  text-transform: capitalize;
+  letter-spacing: 0.2px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ===== PERMISSION SUMMARY SECTION ===== */
+.rss-permission-section {
+  background: white;
+  border-radius: 7.68px;
+  outline: 0.96px #E5E7EB solid;
+  outline-offset: -0.96px;
+  padding: 17.65px 16.50px;
+  display: flex;
+  flex-direction: column;
+  gap: 33.39px;
+}
+
+.rss-permission-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 23.04px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.rss-permission-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8.21px;
+}
+
+.rss-permission-row {
+  display: flex;
+  align-items: center;
+  gap: 8.09px;
+  padding: 0;
+  background: #F9FAFB;
+  border-radius: 3.84px;
+  height: 34.54px;
+  width: 100%;
+}
+
+.rss-permission-icon {
+  width: 13.43px;
+  height: 13.43px;
+  color: #16A34A;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-left: 7.67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rss-permission-label {
+  font-size: 13.44px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 19.20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  flex: 1;
+  margin-left: 3.09px;
+}
+
+.rss-permission-count {
+  font-size: 11.52px;
+  font-weight: 600;
+  color: #4B5563;
+  line-height: 15.36px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+/* ===== NEXT STEPS SECTION ===== */
+.rss-next-steps-section {
+  background: #FEFCE8;
+  border-radius: 7.68px;
+  outline: 0.96px #FEF08A solid;
+  outline-offset: -0.96px;
+  padding: 23.13px 16.50px 23.13px 42.40px;
+  display: flex;
+  flex-direction: column;
+  gap: 19.22px;
+}
+
+.rss-next-steps-header {
+  display: flex;
+  align-items: center;
+  gap: 25.90px;
+  height: 18.43px;
+}
+
+.rss-next-steps-icon {
+  width: 14.38px;
+  height: 19.19px;
+  color: #CA8A04;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rss-next-steps-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #713F12;
+  margin: 0;
+  line-height: 23.04px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.rss-next-steps-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 23.04px;
+}
+
+.rss-next-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14.87px;
+  height: 19.21px;
+}
+
+.rss-step-bullet {
+  width: 7.20px;
+  height: 11.52px;
+  color: #854D0E;
+  flex-shrink: 0;
+  margin-top: 3.37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rss-step-text {
+  font-size: 13.44px;
+  font-weight: 400;
+  color: #854D0E;
+  line-height: 19.20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.rss-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 16px 24px;
+  background: white;
+}
+
+.rss-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.rss-btn-blue {
+  background: #2563EB;
+  color: white;
+}
+
+.rss-btn-blue:hover {
+  background: #1D4ED8;
+}
+
+.rss-btn-orange {
+  background: #F0A83C;
+  color: #0F2C45;
+}
+
+.rss-btn-orange:hover {
+  background: #E89B24;
+}
+
+.rss-btn-outline {
+  background: white;
+  border: 1px solid #D1D5DB;
+  color: #374151;
+}
+
+.rss-btn-outline:hover {
+  background: #F3F4F6;
+}
+
+/* ===== AUDIT LOG CARD ===== */
+.rss-audit-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 20px 24px;
+}
+
+.rss-audit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #F9FAFB;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+}
+
+.rss-audit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-bottom: 1px solid #E5E7EB;
+  gap: 16px;
+}
+
+.rss-audit-row:last-child {
+  border-bottom: none;
+}
+
+.rss-audit-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.rss-audit-value {
+  font-size: 12px;
+  color: #111827;
+  text-align: left;
+  flex: 1;
+  word-break: break-word;
+}
+
+.rss-action-tag {
+  background: #EFF6FF;
+  color: #0C4A6E;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 10px;
+  display: inline-block;
+}
+
+.rss-code {
+  font-family: 'Courier New', monospace;
+  color: #6B7280;
+  font-size: 11px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .rss-header-fixed {
+    left: 272px;
+  }
+
+  .rss-content-wrapper {
+    max-width: calc(100% - 272px);
+  }
+}
+
+@media (max-width: 900px) {
+  /* Full-width sections already stack properly */
+}
+
+@media (max-width: 768px) {
+  .rss-header-fixed {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 12px;
+    left: 0;
+  }
+
+  .rss-breadcrumb {
+    display: none;
+  }
+
+  .rss-content-wrapper {
+    margin-top: 120px;
+    padding: 16px;
+  }
+
+  .rss-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rss-info-row {
+    grid-template-columns: 1fr;
+  }
+
+  .rss-action-buttons {
+    flex-direction: column;
+  }
+
+  .rss-btn {
+    width: 100%;
+  }
+
+  .rss-audit-row {
+    flex-direction: column;
+  }
+
+  .rss-audit-label {
+    width: 100%;
+    min-width: auto;
+  }
+}

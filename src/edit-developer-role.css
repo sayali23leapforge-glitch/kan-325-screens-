@@ -1,0 +1,614 @@
+/* ===== EDIT DEVELOPER ROLE PAGE ===== */
+
+.edr-header {
+  position: fixed;
+  top: 0;
+  left: 272px;
+  right: 0;
+  height: 76px;
+  background: white;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 40;
+  gap: 20px;
+}
+
+.edr-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.edr-back-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.edr-back-btn:hover {
+  background: #F9FAFB;
+}
+
+.edr-header-title h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.edr-breadcrumb {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.edr-breadcrumb-link {
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edr-breadcrumb-sep {
+  color: #D1D5DB;
+}
+
+.edr-breadcrumb-current {
+  color: #6B7280;
+}
+
+.edr-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.edr-notification-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  transition: all 0.2s ease;
+}
+
+.edr-notification-btn:hover {
+  background: #F9FAFB;
+}
+
+.edr-notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background: #EF4444;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  border: 2px solid white;
+}
+
+.edr-btn-save {
+  padding: 10px 20px;
+  background: #F0A83C;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0F2C45;
+  transition: all 0.2s ease;
+}
+
+.edr-btn-save:hover {
+  background: #E89B24;
+}
+
+/* Page Content */
+.edr-page-content {
+  margin-left: 0;
+  margin-top: 76px;
+  padding: 24px;
+  flex: 1;
+  background: #F3F4F6;
+}
+
+/* Main Card */
+.edr-main-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Header */
+.edr-card-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+.edr-card-title-block h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.edr-card-title-block p {
+  font-size: 12px;
+  color: #6B7280;
+  margin: 4px 0 0 0;
+}
+
+.edr-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.edr-link {
+  font-size: 12px;
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.edr-link:hover {
+  color: #1D4ED8;
+}
+
+/* Card Body */
+.edr-card-body {
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+}
+
+.edr-left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Form Section */
+.edr-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edr-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.edr-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.edr-form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.edr-input {
+  padding: 10px 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #111827;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.edr-input:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.edr-textarea {
+  padding: 10px 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #111827;
+  font-family: inherit;
+  min-height: 80px;
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.edr-textarea:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Permissions Section */
+.edr-permissions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edr-permissions-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edr-permissions-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.edr-modify-permissions-btn {
+  padding: 8px 16px;
+  background: #2563EB;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edr-modify-permissions-btn:hover {
+  background: #1D4ED8;
+}
+
+.edr-modify-permissions-btn::before {
+  content: '✓';
+}
+
+/* Permission Cards */
+.edr-permission-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edr-permission-card {
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
+}
+
+.edr-permission-card-header {
+  padding: 12px 16px;
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edr-permission-card-header h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.edr-permission-count {
+  font-size: 12px;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.edr-permission-items {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edr-permission-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.edr-permission-item.unchecked {
+  opacity: 0.5;
+  color: #9CA3AF;
+}
+
+.edr-permission-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #22C55E;
+}
+
+.edr-item-name {
+  flex: 1;
+}
+
+.edr-badge {
+  background: #FEF9C3;
+  color: #854D0E;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Right Sidebar */
+.edr-right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edr-info-card {
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+}
+
+.edr-info-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+/* Status Card */
+.edr-status-card {
+  background: #F0F9FF;
+  border-color: #DBEAFE;
+}
+
+.edr-status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 12px;
+  border-bottom: 1px solid #DBEAFE;
+}
+
+.edr-status-item:last-child {
+  border-bottom: none;
+}
+
+.edr-status-label {
+  color: #6B7280;
+}
+
+.edr-status-value {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Users Card */
+.edr-users-card {
+  background: #F3E8FF;
+  border-color: #E9D5FF;
+}
+
+.edr-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.edr-user-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #E9D5FF;
+  font-size: 12px;
+}
+
+.edr-user-item:last-child {
+  border-bottom: none;
+}
+
+.edr-user-name {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.edr-user-email {
+  color: #6B7280;
+  font-size: 11px;
+}
+
+.edr-view-all {
+  font-size: 11px;
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  padding-top: 8px;
+}
+
+/* Warning Card */
+.edr-warning-card {
+  background: #FFFBEB;
+  border-color: #FED7AA;
+}
+
+.edr-warning-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.edr-warning-icon {
+  font-size: 18px;
+}
+
+.edr-warning-card h4 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.edr-warning-card p {
+  font-size: 12px;
+  color: #92400E;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Card Footer */
+.edr-card-footer {
+  padding: 20px 28px;
+  border-top: 1px solid #E5E7EB;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edr-btn-delete {
+  padding: 10px 16px;
+  background: white;
+  border: 1.5px solid #DC2626;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #DC2626;
+  transition: all 0.2s ease;
+}
+
+.edr-btn-delete:hover {
+  background: #FEE2E2;
+}
+
+.edr-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.edr-btn-cancel {
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.edr-btn-cancel:hover {
+  background: #F3F4F6;
+}
+
+.edr-btn-save-footer {
+  padding: 10px 20px;
+  background: #2563EB;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.edr-btn-save-footer:hover {
+  background: #1D4ED8;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .edr-card-body {
+    grid-template-columns: 1fr;
+  }
+
+  .edr-right-section {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .edr-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px;
+  }
+
+  .edr-breadcrumb {
+    display: none;
+  }
+
+  .edr-page-content {
+    margin-top: 140px;
+    padding: 16px;
+  }
+
+  .edr-card-body {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .edr-form-row {
+    grid-template-columns: 1fr;
+  }
+}

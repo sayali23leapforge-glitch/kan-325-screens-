@@ -1,0 +1,416 @@
+/* Session Timeout Modal Styles */
+
+.session-timeout-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(2px);
+  z-index: 2100;
+  animation: fadeInOverlay 0.25s ease-out;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Card */
+.session-timeout-modal {
+  width: 100%;
+  max-width: 340px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  animation: slideUpModal 0.3s ease-out;
+}
+
+@keyframes slideUpModal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Top Header Section with Gradient Background */
+.session-timeout-header {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 50%, #FCD34D 100%);
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative pattern in background */
+.session-timeout-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(217, 119, 6, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Countdown Container */
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Timer Ring Container with Layered Rings */
+.timer-ring-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer soft ring */
+.timer-ring-outer {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid rgba(217, 119, 6, 0.2);
+  box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.08);
+}
+
+/* Inner ring */
+.timer-ring-inner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(217, 119, 6, 0.15);
+}
+
+/* Timer icon background circle */
+.timer-icon-bg {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  z-index: 2;
+}
+
+/* Timer icon inside */
+.timer-icon {
+  width: 28px;
+  height: 28px;
+  color: #FFFFFF;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Countdown Content */
+.countdown-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Large countdown number */
+.countdown-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #92400E;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* Countdown label */
+.countdown-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #B45309;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+  padding: 12px 24px;
+  background: #FAFAF9;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: #E5E7EB;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 50%, #D97706 100%);
+  border-radius: 999px;
+  transition: width 1s linear;
+  position: relative;
+  box-shadow: 0 0 8px rgba(217, 119, 6, 0.4);
+}
+
+/* Glossy highlight effect on progress bar */
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%);
+  border-radius: 999px;
+}
+
+/* Content Section */
+.session-timeout-content {
+  padding: 24px;
+  text-align: center;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.session-timeout-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0F172A;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.session-timeout-subtitle {
+  font-size: 14px;
+  color: #64748B;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+/* Info Box */
+.session-timeout-info-box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  color: #64748B;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-text {
+  font-size: 13px;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Footer Buttons */
+.session-timeout-footer {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+}
+
+.session-timeout-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.session-timeout-btn:focus {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #FFFFFF;
+  color: #64748B;
+  border: 1.5px solid #CBD5E1;
+}
+
+.logout-btn:hover {
+  background-color: #F8FAFC;
+  border-color: #94A3B8;
+  color: #475569;
+}
+
+.logout-btn:active {
+  transform: scale(0.98);
+}
+
+.logout-btn:focus {
+  outline-color: #CBD5E1;
+}
+
+.logout-btn .btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Extend Session Button */
+.extend-btn {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.extend-btn:hover {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.4);
+  transform: translateY(-1px);
+}
+
+.extend-btn:active {
+  transform: scale(0.98);
+}
+
+.extend-btn:focus {
+  outline-color: #F59E0B;
+}
+
+.extend-btn .btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .session-timeout-modal {
+    max-width: calc(100vw - 32px);
+    margin: 16px;
+  }
+
+  .session-timeout-header {
+    padding: 28px 20px;
+  }
+
+  .timer-ring-container {
+    width: 90px;
+    height: 90px;
+  }
+
+  .timer-ring-outer {
+    width: 90px;
+    height: 90px;
+  }
+
+  .timer-ring-inner {
+    width: 72px;
+    height: 72px;
+  }
+
+  .timer-icon-bg {
+    width: 54px;
+    height: 54px;
+  }
+
+  .timer-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .countdown-number {
+    font-size: 42px;
+  }
+
+  .session-timeout-content {
+    padding: 20px;
+  }
+
+  .session-timeout-footer {
+    gap: 10px;
+    padding: 16px 20px;
+  }
+
+  .session-timeout-btn {
+    height: 40px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .session-timeout-btn .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .session-timeout-header {
+    padding: 24px 16px;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+  }
+
+  .session-timeout-title {
+    font-size: 16px;
+  }
+
+  .session-timeout-subtitle {
+    font-size: 13px;
+  }
+
+  .info-text {
+    font-size: 12px;
+  }
+
+  .session-timeout-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .session-timeout-btn {
+    width: 100%;
+  }
+}

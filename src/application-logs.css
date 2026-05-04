@@ -1,0 +1,540 @@
+/* Application Logs Page Styling */
+
+.application-logs-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+}
+
+/* Stats Grid */
+.logs-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* LogStatCard Styling */
+.log-stat-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.log-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 12px;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.log-stat-icon svg {
+  color: inherit;
+}
+
+.log-stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.log-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+.log-stat-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.log-stat-last-text {
+  font-size: 11px;
+  color: #9CA3AF;
+}
+
+.log-stat-trend {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.log-stat-trend.positive {
+  color: #16A34A;
+}
+
+.log-stat-trend.negative {
+  color: #DC2626;
+}
+
+.log-stat-trend.neutral {
+  color: #CA8A04;
+}
+
+/* Activity Logs Card */
+.activity-logs-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logs-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+/* Toolbar */
+.logs-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.search-wrapper {
+  flex: 1;
+  position: relative;
+  max-width: 300px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9CA3AF;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #111827;
+  background-color: #F9FAFB;
+  transition: all 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: #9CA3AF;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #F0A83C;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(240, 168, 60, 0.1);
+}
+
+/* Level Filter */
+.level-filter {
+  padding: 10px 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #111827;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.level-filter:focus {
+  outline: none;
+  border-color: #F0A83C;
+  box-shadow: 0 0 0 3px rgba(240, 168, 60, 0.1);
+}
+
+.level-filter:hover {
+  border-color: #D1D5DB;
+}
+
+/* Export Button */
+.btn-export {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: #F0A83C;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-export:hover {
+  background-color: #DE9F2D;
+}
+
+.btn-export:active {
+  background-color: #CC8F1A;
+}
+
+/* Table Wrapper */
+.logs-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.logs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.logs-table thead {
+  background-color: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.logs-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.logs-table tbody tr {
+  border-bottom: 1px solid #E5E7EB;
+  transition: background-color 0.2s ease;
+}
+
+.logs-table tbody tr:hover {
+  background-color: #F9FAFB;
+}
+
+.logs-table td {
+  padding: 14px 12px;
+  color: #111827;
+  vertical-align: middle;
+}
+
+.logs-table td:first-child {
+  color: #6B7280;
+  font-size: 12px;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.view-link {
+  color: #F0A83C;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.view-link:hover {
+  color: #DE9F2D;
+  text-decoration: underline;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+}
+
+.pagination-info {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-btn {
+  padding: 8px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  color: #111827;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #F3F4F6;
+  border-color: #9CA3AF;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-page-btn {
+  padding: 8px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  color: #111827;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  min-width: 36px;
+  text-align: center;
+}
+
+.pagination-page-btn:hover {
+  background-color: #F3F4F6;
+  border-color: #9CA3AF;
+}
+
+.pagination-page-btn.active {
+  background-color: #F0A83C;
+  border-color: #F0A83C;
+  color: #FFFFFF;
+}
+
+/* Log Level Badge */
+.log-level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.log-level-badge.error {
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+
+.log-level-badge.warn {
+  background-color: #FEF3C7;
+  color: #CA8A04;
+}
+
+.log-level-badge.info {
+  background-color: #DCFCE7;
+  color: #16A34A;
+}
+
+.log-level-badge.debug {
+  background-color: #DBEAFE;
+  color: #2563EB;
+}
+
+/* Analytics Card */
+.analytics-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.analytics-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.recharts-wrapper {
+  width: 100%;
+  height: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .logs-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logs-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+    flex: 1 1 100%;
+    min-width: 200px;
+  }
+
+  .logs-table-wrapper {
+    font-size: 12px;
+  }
+
+  .logs-table th,
+  .logs-table td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .application-logs-page {
+    gap: 20px;
+  }
+
+  .logs-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-logs-card,
+  .analytics-card {
+    padding: 16px;
+  }
+
+  .logs-card-title,
+  .analytics-title {
+    font-size: 15px;
+  }
+
+  .logs-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-wrapper,
+  .level-filter,
+  .btn-export {
+    width: 100%;
+  }
+
+  .logs-table-wrapper {
+    font-size: 11px;
+    overflow-x: auto;
+  }
+
+  .logs-table th,
+  .logs-table td {
+    padding: 8px 6px;
+  }
+
+  .logs-table {
+    min-width: 700px;
+  }
+
+  .pagination-container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .pagination-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .logs-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .log-stat-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .log-stat-icon {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+  }
+
+  .log-stat-value {
+    font-size: 24px;
+  }
+
+  .logs-toolbar {
+    gap: 10px;
+  }
+
+  .search-input {
+    padding: 8px 10px 8px 32px;
+    font-size: 12px;
+  }
+
+  .level-filter {
+    font-size: 12px;
+    padding: 8px 10px;
+    min-width: 120px;
+  }
+
+  .btn-export {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .logs-table {
+    font-size: 10px;
+    min-width: 600px;
+  }
+
+  .logs-table th,
+  .logs-table td {
+    padding: 6px 4px;
+  }
+
+  .pagination-info {
+    font-size: 11px;
+  }
+
+  .pagination-btn,
+  .pagination-page-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    min-width: 30px;
+  }
+}

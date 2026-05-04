@@ -1,0 +1,211 @@
+.login-shell {
+  width: min(980px, 100% - 2rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 30px 80px rgba(39, 54, 69, 0.18);
+  backdrop-filter: blur(8px);
+  animation: rise-in 650ms ease-out;
+}
+
+.login-panel {
+  padding: 3rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent-700);
+  font-family: var(--sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+
+h1 {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--ink-900);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.intro {
+  margin: 0 0 2rem;
+  color: var(--ink-700);
+  font-size: 0.98rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.login-form label {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink-800);
+}
+
+.login-form input[type='email'],
+.login-form input[type='password'] {
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--ink-300);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  font-size: 0.97rem;
+  color: var(--ink-900);
+  background: rgba(255, 255, 255, 0.85);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.login-form input[type='email']:focus,
+.login-form input[type='password']:focus {
+  outline: none;
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 4px rgba(21, 160, 133, 0.18);
+}
+
+.login-options {
+  margin: 0.25rem 0 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--ink-700);
+}
+
+.remember input {
+  accent-color: var(--accent-600);
+}
+
+a {
+  color: var(--accent-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.92rem 1rem;
+  background: linear-gradient(120deg, #0f9f95, #159583 45%, #0c6d61 100%);
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(10, 116, 100, 0.35);
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid var(--ink-900);
+  outline-offset: 3px;
+}
+
+.error {
+  margin: -0.15rem 0 0.4rem;
+  color: #bc2a49;
+  font-size: 0.82rem;
+}
+
+.success {
+  margin-top: 1rem;
+  border-radius: 10px;
+  background: rgba(21, 160, 133, 0.14);
+  color: #0f6b5f;
+  padding: 0.7rem 0.8rem;
+  font-size: 0.87rem;
+}
+
+.signup-note {
+  margin-top: 1.3rem;
+  font-size: 0.9rem;
+  color: var(--ink-700);
+}
+
+.login-aside {
+  background: linear-gradient(160deg, #0f6d7c 0%, #11445f 52%, #0d2d42 100%);
+  position: relative;
+  color: #f7fffb;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100%;
+}
+
+.aside-shape {
+  position: absolute;
+  inset: 1.2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background:
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.33), transparent 36%),
+    radial-gradient(circle at 20% 80%, rgba(70, 229, 196, 0.26), transparent 42%),
+    linear-gradient(130deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+}
+
+.aside-copy {
+  position: relative;
+  padding: 2rem;
+}
+
+.login-aside h2 {
+  margin: 0 0 0.7rem;
+  color: #f7fffb;
+  line-height: 1.2;
+  font-size: clamp(1.2rem, 2.3vw, 1.7rem);
+}
+
+.login-aside p {
+  margin: 0;
+  color: rgba(247, 255, 251, 0.92);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 860px) {
+  .login-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .login-panel {
+    padding: 1.5rem;
+  }
+
+  .login-aside {
+    min-height: 240px;
+  }
+
+  .aside-copy {
+    padding: 1.25rem;
+  }
+}
