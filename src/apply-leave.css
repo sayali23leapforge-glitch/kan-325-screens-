@@ -1,0 +1,512 @@
+.apply-leave-layout {
+  min-height: 100vh;
+  display: flex;
+  padding-left: 256px;
+  background: #f8fafc;
+  color: #111827;
+  font-family: Inter, sans-serif;
+}
+
+.apply-leave-main {
+  flex: 1;
+  width: 100%;
+  padding: 30px 30px 40px 18px;
+}
+
+.apply-leave-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 18px 18px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.apply-leave-title {
+  margin: 0;
+  font-size: 31px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.apply-leave-breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 16px;
+  color: #9ca3af;
+}
+
+.apply-leave-breadcrumb span:nth-child(1),
+.apply-leave-breadcrumb span:nth-child(3),
+.apply-leave-breadcrumb span:nth-child(5) {
+  color: #2563eb;
+}
+
+.apply-leave-breadcrumb span:last-child {
+  color: #9ca3af;
+}
+
+.apply-leave-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.apply-leave-bell-btn,
+.apply-leave-dashboard-btn,
+.apply-leave-upload-box,
+.apply-leave-submit-btn,
+.apply-leave-draft-btn,
+.apply-leave-cancel-btn {
+  font-family: inherit;
+}
+
+.apply-leave-bell-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.apply-leave-bell-badge {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+.apply-leave-dashboard-btn {
+  height: 38px;
+  padding: 0 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.apply-leave-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.68fr) minmax(0, 0.8fr);
+  gap: 16px;
+  padding: 16px 18px 0;
+}
+
+.apply-leave-card,
+.apply-leave-policy-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.apply-leave-form-card {
+  padding: 12px 14px 18px;
+}
+
+.apply-leave-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.apply-leave-card-header h2,
+.apply-leave-balance-card h2,
+.apply-leave-recent-card h2,
+.apply-leave-policy-card h2 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.apply-leave-draft-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.apply-leave-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.apply-leave-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.apply-leave-field label {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.apply-leave-field input,
+.apply-leave-field select,
+.apply-leave-field textarea {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 11px 12px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #374151;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.apply-leave-field input,
+.apply-leave-field select,
+.apply-leave-input-icon {
+  height: 42px;
+}
+
+.apply-leave-field select {
+  appearance: none;
+}
+
+.apply-leave-field textarea {
+  min-height: 64px;
+  resize: none;
+  padding-top: 10px;
+}
+
+.apply-leave-field input::placeholder,
+.apply-leave-field textarea::placeholder,
+.apply-leave-field select {
+  color: #9ca3af;
+}
+
+.apply-leave-input-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+.apply-leave-input-icon input {
+  border: 0;
+  border-radius: 0;
+  height: 100%;
+  padding: 0;
+}
+
+.apply-leave-input-icon svg {
+  flex: 0 0 auto;
+  color: #4b5563;
+}
+
+.apply-leave-half-day-field {
+  margin-bottom: 10px;
+}
+
+.apply-leave-radio-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.apply-leave-radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #6b7280;
+}
+
+.apply-leave-radio-label input {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  accent-color: #2563eb;
+}
+
+.apply-leave-upload-box {
+  width: 100%;
+  min-height: 96px;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #9ca3af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.apply-leave-upload-box span {
+  font-size: 11px;
+  line-height: 16px;
+  color: #6b7280;
+}
+
+.apply-leave-upload-box small {
+  font-size: 9px;
+  line-height: 12px;
+  color: #9ca3af;
+}
+
+.apply-leave-upload-box svg {
+  color: #9ca3af;
+}
+
+.apply-leave-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 2px;
+}
+
+.apply-leave-submit-btn,
+.apply-leave-draft-btn,
+.apply-leave-cancel-btn {
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.apply-leave-submit-btn {
+  border: 0;
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.25);
+}
+
+.apply-leave-draft-btn {
+  border: 1px solid #e5e7eb;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.apply-leave-cancel-btn {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+}
+
+.apply-leave-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.apply-leave-balance-card,
+.apply-leave-recent-card {
+  padding: 12px;
+}
+
+.apply-leave-balance-list,
+.apply-leave-recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.apply-leave-balance-item,
+.apply-leave-recent-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.apply-leave-balance-item {
+  min-height: 62px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apply-leave-balance-item.blue {
+  background: #eff6ff;
+}
+
+.apply-leave-balance-item.green {
+  background: #ecfdf5;
+}
+
+.apply-leave-balance-item.orange {
+  background: #fff7ed;
+}
+
+.apply-leave-balance-item h3,
+.apply-leave-recent-item h3 {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.apply-leave-balance-item p,
+.apply-leave-recent-item p,
+.apply-leave-balance-meta span {
+  margin: 2px 0 0;
+  font-size: 10px;
+  line-height: 14px;
+  color: #9ca3af;
+}
+
+.apply-leave-balance-meta {
+  text-align: right;
+}
+
+.apply-leave-balance-meta strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.apply-leave-balance-item.blue .apply-leave-balance-meta strong {
+  color: #2563eb;
+}
+
+.apply-leave-balance-item.green .apply-leave-balance-meta strong {
+  color: #16a34a;
+}
+
+.apply-leave-balance-item.orange .apply-leave-balance-meta strong {
+  color: #ea580c;
+}
+
+.apply-leave-recent-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #ffffff;
+}
+
+.apply-leave-status-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.apply-leave-status-badge.approved {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.apply-leave-status-badge.pending {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.apply-leave-policy-card {
+  padding: 12px 14px;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.apply-leave-policy-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apply-leave-policy-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+.apply-leave-policy-list {
+  margin: 10px 0 0 22px;
+  padding: 0;
+  color: #2563eb;
+}
+
+.apply-leave-policy-list li {
+  margin-bottom: 4px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+@media (max-width: 1200px) {
+  .apply-leave-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .apply-leave-layout {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .apply-leave-main {
+    width: 100%;
+    padding: 18px 16px 28px 12px;
+  }
+
+  .apply-leave-header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .apply-leave-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-leave-actions-row {
+    flex-wrap: wrap;
+  }
+}

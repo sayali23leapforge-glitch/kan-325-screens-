@@ -1,0 +1,212 @@
+.revoke-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.revoke-modal-container {
+  width: 500px;
+  max-width: 100%;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  padding: 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.revoke-modal-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.revoke-modal-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #FEE2E2;
+  color: #DC2626;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.revoke-modal-title {
+  margin: 0;
+  text-align: center;
+  color: #111827;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.revoke-modal-subtitle {
+  margin: 8px 0 14px;
+  text-align: center;
+  color: #6B7280;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.revoke-modal-employee-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F9FAFB;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.revoke-modal-employee-card img {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.revoke-modal-employee-name {
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.revoke-modal-employee-role {
+  color: #4B5563;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.revoke-modal-employee-status {
+  color: #DC2626;
+  font-size: 9px;
+  line-height: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.revoke-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.revoke-status-item {
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.revoke-status-item.green {
+  background: #F0FDF4;
+}
+
+.revoke-status-item.yellow {
+  background: #FEFCE8;
+}
+
+.revoke-status-item.gray {
+  background: #F9FAFB;
+}
+
+.revoke-status-title {
+  color: #111827;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 600;
+}
+
+.revoke-status-subtitle {
+  color: #6B7280;
+  font-size: 9px;
+  line-height: 12px;
+}
+
+.revoke-status-icon.green {
+  color: #16A34A;
+}
+
+.revoke-status-icon.yellow {
+  color: #D97706;
+}
+
+.revoke-status-icon.gray {
+  color: #9CA3AF;
+}
+
+.spinning {
+  animation: revoke-spin 1s linear infinite;
+}
+
+@keyframes revoke-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.revoke-next-steps-box {
+  background: #EFF6FF;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.revoke-next-steps-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #1D4ED8;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.revoke-next-steps-box p {
+  margin: 0;
+  color: #1E40AF;
+  font-size: 9px;
+  line-height: 14px;
+}
+
+.revoke-modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.revoke-audit-btn {
+  border: none;
+  height: 34px;
+  border-radius: 8px;
+  background: #F3F4F6;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.revoke-back-btn {
+  border: none;
+  height: 34px;
+  border-radius: 8px;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}

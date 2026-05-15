@@ -4,7 +4,9 @@ function SecurityPoliciesHeader({
   onCreatePolicy = () => {},
   onNotifications = () => {},
   onSP1Click = () => {},
+  onPolicyClick = () => {},
   onMenuToggle = () => {},
+  currentView = 'main',
   notificationCount = 12
 }) {
   return (
@@ -23,6 +25,14 @@ function SecurityPoliciesHeader({
         </button>
         <h1 className="header-title">Security Policies</h1>
         <div className="header-actions">
+          <button 
+            className={`btn-policy ${currentView === 'policy' ? 'active' : ''}`}
+            onClick={onPolicyClick}
+            title="View Security Policy Configuration"
+          >
+            <FiSettings size={16} />
+            Policy
+          </button>
           <button className="btn-sp1" onClick={onSP1Click}>
             <FiSettings size={16} />
             SP1

@@ -1,0 +1,686 @@
+/* ============================================================================
+   ACTIVATE RULE - PIXEL PERFECT STYLING
+   ============================================================================ */
+
+.activate-rule-container {
+  display: flex;
+  flex-direction: column;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* ============================================================================
+   HEADER (85.62px height, 1.15px border)
+   ============================================================================ */
+.activate-rule-header {
+  background: white;
+  border-bottom: 1.15px solid #e5e7eb;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 85.62px;
+  justify-content: center;
+  position: relative;
+}
+
+.activate-rule-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13.44px;
+}
+
+.breadcrumb-link {
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.breadcrumb-link.active {
+  color: #2563eb;
+}
+
+.activate-rule-header-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -5px;
+}
+
+.activate-rule-header-title {
+  font-size: 23.04px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.activate-rule-header-actions {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activate-rule-bell {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  transition: color 0.2s;
+}
+
+.activate-rule-bell:hover {
+  color: #111827;
+}
+
+.activate-rule-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ef4444;
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.activate-rule-save-btn {
+  background: #16a34a;
+  border: none;
+  border-radius: 7.68px;
+  padding: 10px 16px;
+  font-size: 15.36px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.activate-rule-save-btn:hover {
+  background: #15803d;
+}
+
+/* ============================================================================
+   STEPPER (30.71px circles, completed #22C55E, active #3B82F6)
+   ============================================================================ */
+.activate-rule-stepper {
+  background: white;
+  padding: 28px 30px;
+  border-bottom: 1.15px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.activate-rule-stepper-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.activate-rule-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 1;
+}
+
+.activate-rule-step-circle {
+  width: 30.71px;
+  height: 30.71px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  border: 1.92px solid transparent;
+}
+
+.activate-rule-step-item.done .activate-rule-step-circle {
+  background: #22c55e;
+  color: white;
+}
+
+.activate-rule-step-item.active .activate-rule-step-circle {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.activate-rule-step-item.pending .activate-rule-step-circle {
+  background: #e5e7eb;
+  color: #9ca3af;
+  border: 1.92px solid #d1d5db;
+}
+
+.activate-rule-step-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  color: #4b5563;
+}
+
+.activate-rule-step-item.done .activate-rule-step-label {
+  color: #16a34a;
+}
+
+.activate-rule-step-item.active .activate-rule-step-label {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.activate-rule-step-item.pending .activate-rule-step-label {
+  color: #9ca3af;
+}
+
+.activate-rule-step-connector {
+  height: 1.92px;
+  background: #d1d5db;
+  flex: 1;
+  margin: 0 -5px;
+  position: relative;
+  top: -17px;
+}
+
+.activate-rule-step-item.done ~ .activate-rule-step-connector {
+  background: #22c55e;
+}
+
+/* ============================================================================
+   MAIN CONTENT AREA
+   ============================================================================ */
+.activate-rule-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================================================
+   ACTIVATION SETTINGS CARD
+   background: white
+   border-radius: 11.52px
+   border: 0.96px solid #E5E7EB
+   box-shadow: 0px 0.96px 1.92px rgba(0,0,0,0.05)
+   ============================================================================ */
+.activation-settings-card {
+  background: white;
+  border-radius: 11.52px;
+  border: 0.96px solid #e5e7eb;
+  box-shadow: 0px 0.96px 1.92px rgba(0, 0, 0, 0.05);
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.activation-settings-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.activation-settings-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.activation-settings-header h2 {
+  font-size: 17.28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.activation-settings-header p {
+  font-size: 13.44px;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* ============================================================================
+   ACTIVATION OPTIONS (RADIO BUTTONS)
+   SELECTED: border: 0.96px solid #0075FF; inner circle: #0075FF
+   UNSELECTED: border: 0.96px solid #767676
+   ============================================================================ */
+.activation-settings-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.activation-option {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  border: 0.96px solid #d1d5db;
+  border-radius: 7.68px;
+  background: #fafbfc;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.activation-option:hover {
+  background: #f3f4f6;
+  border-color: #bfdbfe;
+}
+
+.activation-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  flex: 1;
+  position: relative;
+}
+
+.activation-radio {
+  display: none;
+}
+
+.activation-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 0.96px solid #767676;
+  border-radius: 50%;
+  margin-top: 2px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.activation-radio:checked ~ .activation-checkbox {
+  border-color: #0075ff;
+  background: white;
+  box-shadow: inset 0 0 0 4px white, inset 0 0 0 6px #0075ff;
+}
+
+.activation-option-content {
+  flex: 1;
+}
+
+.activation-option-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.activation-option-desc {
+  font-size: 13.44px;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ============================================================================
+   SCHEDULE FIELDS (when Schedule Activation is selected)
+   ============================================================================ */
+.schedule-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 0.96px solid #e5e7eb;
+  background: white;
+  border-radius: 7.68px;
+  padding: 16px;
+  grid-column: 1 / -1;
+}
+
+.schedule-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 13.44px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.schedule-input {
+  height: 44.53px;
+  border: 0.96px solid #d1d5db;
+  border-radius: 7.68px;
+  padding: 0 12px;
+  font-size: 13.44px;
+  color: #111827;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.schedule-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ============================================================================
+   RULE SUMMARY CARD
+   ============================================================================ */
+.rule-summary-card {
+  background: white;
+  border-radius: 11.52px;
+  border: 0.96px solid #e5e7eb;
+  box-shadow: 0px 0.96px 1.92px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.rule-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 0.96px solid #f3f4f6;
+  padding-bottom: 12px;
+}
+
+.rule-summary-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.rule-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.summary-label {
+  font-size: 13.44px;
+  font-weight: 500;
+  color: #4b5563;
+  min-width: 100px;
+}
+
+.summary-value {
+  font-size: 13.44px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.summary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.summary-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 11.52px;
+  font-weight: 500;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.summary-tag.blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.summary-tag.yellow {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.summary-tag.green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ============================================================================
+   PERFORMANCE CARDS (23.04px bold, colors as specified)
+   ============================================================================ */
+.performance-section {
+  margin-bottom: 28px;
+}
+
+.performance-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.performance-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.performance-card {
+  border-radius: 7.68px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0.96px 1.92px rgba(0, 0, 0, 0.05);
+}
+
+.performance-card.blue {
+  background: #dbeafe;
+}
+
+.performance-card.green {
+  background: #dcfce7;
+}
+
+.performance-card.purple {
+  background: #f3e8ff;
+}
+
+.perf-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.perf-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.perf-value {
+  font-size: 23.04px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.perf-desc {
+  font-size: 11.52px;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* ============================================================================
+   WARNING BOX
+   background: #FEFCE8
+   border: 0.96px solid #FEF08A
+   TEXT: Title: #854D0E, Description: #A16207
+   ============================================================================ */
+.activate-warning-box {
+  background: #f2f0de;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  min-height: 118px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  padding: 16px 20px 18px;
+  box-shadow: none;
+}
+
+.activate-warning-header {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8b5a07;
+  height: 30px;
+}
+
+.activate-warning-header svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #c08400;
+  margin-right: 0;
+}
+
+.activate-warning-header h4 {
+  font-size: 15.36px;
+  font-weight: 700;
+  color: #7c4a03;
+  margin: 0;
+  line-height: 1;
+  padding: 0;
+}
+
+.activate-warning-content {
+  position: static;
+  margin: 8px 0 0 32px;
+  padding: 0;
+  display: block;
+  width: calc(100% - 32px);
+  max-width: none;
+  font-size: 13.44px;
+  color: #a06a1a;
+  line-height: 1.45;
+  font-weight: 400;
+  white-space: normal;
+}
+
+/* ============================================================================
+   FOOTER BUTTONS
+   HEIGHT: 48.36px
+   PRIMARY: background: #16A34A, color: white, border-radius: 7.68px
+   SECONDARY: border: 0.96px solid #D1D5DB
+   ============================================================================ */
+.activate-rule-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 0.96px solid #e5e7eb;
+  margin-top: 28px;
+}
+
+.activate-rule-footer-btn {
+  height: 48.36px;
+  padding: 0 24px;
+  border-radius: 7.68px;
+  font-size: 15.36px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.activate-rule-footer-btn.primary {
+  background: #16a34a;
+  color: white;
+  border: none;
+  min-width: 180px;
+}
+
+.activate-rule-footer-btn.primary:hover {
+  background: #15803d;
+}
+
+.activate-rule-footer-btn.secondary {
+  background: white;
+  color: #374151;
+  border: 0.96px solid #d1d5db;
+  min-width: 160px;
+}
+
+.activate-rule-footer-btn.secondary:hover {
+  background: #f9fafb;
+  border-color: #bfdbfe;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .performance-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .activate-rule-header {
+    height: auto;
+  }
+
+  .activate-rule-header-actions {
+    position: static;
+    transform: none;
+    margin-top: 12px;
+  }
+
+  .activate-rule-stepper-inner {
+    flex-wrap: wrap;
+  }
+
+  .activate-rule-step-item {
+    flex: 0 0 calc(50% - 8px);
+  }
+
+  .activate-rule-step-connector {
+    display: none;
+  }
+}

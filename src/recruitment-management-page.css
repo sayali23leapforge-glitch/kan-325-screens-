@@ -1,0 +1,518 @@
+/* Recruitment Management */
+
+.recruit-layout {
+  display: flex;
+  height: 100vh;
+  background: #F9FAFB;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.recruit-main {
+  flex: 1;
+  margin-left: 256px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.recruit-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  flex-shrink: 0;
+}
+
+.recruit-title {
+  margin: 0 0 4px;
+  font-size: 28.8px;
+  line-height: 34.56px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.recruit-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.44px;
+  line-height: 19.2px;
+  font-weight: 400;
+}
+
+.recruit-breadcrumb a {
+  color: #2563EB;
+  text-decoration: none;
+}
+
+.recruit-breadcrumb span {
+  color: #4B5563;
+}
+
+.recruit-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recruit-bell-btn {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: #F3F4F6;
+  color: #6B7280;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.recruit-bell-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: #EF4444;
+  color: #FFFFFF;
+  font-size: 11.52px;
+  font-weight: 400;
+  line-height: 15.36px;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+}
+
+.recruit-new-btn {
+  border: none;
+  border-radius: 8px;
+  background: #F0A83C;
+  color: #0F2C45;
+  padding: 9px 12px;
+  font-size: 15.36px;
+  font-weight: 600;
+  line-height: 23.04px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.recruit-acceptance-btn {
+  border: none;
+  border-radius: 7.68px;
+  background: #2563EB;
+  color: #FFFFFF;
+  height: 36px;
+  padding: 0 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.44px;
+  font-weight: 500;
+  line-height: 19.2px;
+  cursor: pointer;
+}
+
+.recruit-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recruit-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.recruit-stat-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  padding: 10px;
+}
+
+.recruit-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.recruit-stat-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recruit-stat-badge {
+  border-radius: 999px;
+  font-size: 11.52px;
+  font-weight: 600;
+  line-height: 15.36px;
+  padding: 4px 7px;
+}
+
+.recruit-badge-blue {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.recruit-badge-green {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.recruit-badge-purple {
+  background: #F3E8FF;
+  color: #6B21A8;
+}
+
+.recruit-badge-orange {
+  background: #FFEDD5;
+  color: #9A3412;
+}
+
+.recruit-stat-value {
+  font-size: 28.8px;
+  line-height: 34.56px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 7px;
+}
+
+.recruit-stat-title {
+  font-size: 13.44px;
+  line-height: 19.2px;
+  font-weight: 400;
+  color: #4B5563;
+}
+
+.recruit-mid-row {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: 8px;
+}
+
+.recruit-pipeline-card,
+.recruit-top-card,
+.recruit-table-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.recruit-pipeline-card,
+.recruit-top-card {
+  padding: 10px;
+}
+
+.recruit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.recruit-card-title {
+  margin: 0;
+  font-size: 17.28px;
+  line-height: 26.88px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.recruit-tabs {
+  display: inline-flex;
+  gap: 2px;
+  background: #F3F4F6;
+  padding: 2px;
+  border-radius: 6px;
+}
+
+.recruit-tab {
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #6B7280;
+  font-size: 13.44px;
+  font-weight: 500;
+  line-height: 19.2px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.recruit-tab.active {
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+.recruit-pipeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recruit-pipeline-item {
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recruit-pipeline-item-clickable {
+  cursor: pointer;
+}
+
+.recruit-pipeline-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recruit-pipeline-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recruit-pipeline-name {
+  font-size: 15.36px;
+  line-height: 23.04px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.recruit-pipeline-count {
+  font-size: 19.2px;
+  line-height: 26.88px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.recruit-top-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recruit-top-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recruit-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 8px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.recruit-top-info {
+  flex: 1;
+}
+
+.recruit-top-name {
+  font-size: 15.36px;
+  font-weight: 600;
+  line-height: 23.04px;
+  color: #111827;
+}
+
+.recruit-top-role {
+  margin-top: 2px;
+  font-size: 13.44px;
+  color: #4B5563;
+  line-height: 19.2px;
+  font-weight: 400;
+}
+
+.recruit-top-hires {
+  text-align: right;
+}
+
+.recruit-top-count {
+  font-size: 15.36px;
+  font-weight: 700;
+  line-height: 23.04px;
+  color: #111827;
+}
+
+.recruit-top-label {
+  font-size: 11.52px;
+  color: #4B5563;
+  line-height: 15.36px;
+  font-weight: 400;
+}
+
+.recruit-table-header {
+  padding: 8px 10px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.recruit-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.recruit-control-btn {
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #6B7280;
+  font-size: 13.44px;
+  font-weight: 500;
+  line-height: 19.2px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.recruit-table-wrap {
+  overflow-x: auto;
+}
+
+.recruit-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recruit-table thead tr {
+  background: #F9FAFB;
+}
+
+.recruit-table th {
+  font-size: 11.52px;
+  color: #4B5563;
+  font-weight: 600;
+  line-height: 15.36px;
+  text-transform: uppercase;
+  letter-spacing: 0.58px;
+  text-align: left;
+  padding: 7px 8px;
+  border-bottom: 1px solid #E5E7EB;
+  white-space: nowrap;
+}
+
+.recruit-table td {
+  font-size: 13.44px;
+  line-height: 19.2px;
+  font-weight: 400;
+  color: #374151;
+  padding: 8px;
+  border-bottom: 1px solid #F3F4F6;
+  white-space: nowrap;
+}
+
+.recruit-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.recruit-candidate-cell {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.recruit-candidate-clickable {
+  cursor: pointer;
+}
+
+.recruit-candidate-name {
+  font-size: 15.36px;
+  font-weight: 600;
+  line-height: 23.04px;
+  color: #111827;
+}
+
+.recruit-candidate-role {
+  margin-top: 2px;
+  font-size: 13.44px;
+  color: #4B5563;
+  line-height: 19.2px;
+  font-weight: 400;
+}
+
+.recruit-chip {
+  border-radius: 999px;
+  padding: 3px 7px;
+  font-size: 11.52px;
+  font-weight: 500;
+  line-height: 15.36px;
+}
+
+.recruit-chip.design {
+  background: #FFEDD5;
+  color: #9A3412;
+}
+
+.recruit-chip.engineering {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.recruit-chip.marketing {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.recruit-status {
+  border-radius: 999px;
+  padding: 3px 7px;
+  font-size: 11.52px;
+  font-weight: 600;
+  line-height: 15.36px;
+}
+
+.recruit-status.interview {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.recruit-status.screening {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.recruit-status.applied {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.recruit-action-btn {
+  border: none;
+  background: transparent;
+  color: #2563EB;
+  font-size: 13.44px;
+  font-weight: 500;
+  line-height: 19.2px;
+  padding: 0;
+  cursor: pointer;
+}

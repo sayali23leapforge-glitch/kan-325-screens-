@@ -1,0 +1,580 @@
+
+/* Figma pixel-perfect styles for Define Actions */
+.define-actions-figma-bg {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(0deg, #F9FAFB 0%, #F9FAFB 100%), white;
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  position: relative;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+}
+.define-actions-header-figma {
+  width: 100%;
+  max-width: 870px;
+  height: 85px;
+  background: white;
+  border-bottom: 1.15px #E5E7EB solid;
+  position: relative;
+  margin: 0 auto;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+.define-actions-breadcrumb-figma {
+  position: absolute;
+  left: 30px;
+  top: 51px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.44px;
+  color: #2563EB;
+  font-weight: 400;
+}
+.breadcrumb-link {
+  color: #4B5563;
+}
+.breadcrumb-link.active {
+  color: #2563EB;
+}
+.define-actions-header-title-row {
+  position: absolute;
+  left: 30px;
+  top: 16px;
+}
+.define-actions-header-title {
+  font-size: 23.04px;
+  font-weight: 700;
+  color: #111827;
+}
+.define-actions-header-actions-figma {
+  position: absolute;
+  right: 30px;
+  top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.define-actions-bell-figma {
+  background: none;
+  border: none;
+  position: relative;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.define-actions-badge-figma {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #EF4444;
+  color: white;
+  border-radius: 50%;
+  font-size: 11.52px;
+  font-weight: 700;
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.define-actions-save-btn-figma {
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 7.68px;
+  font-size: 13.44px;
+  font-weight: 600;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+
+.define-actions-stepper-figma {
+  width: 100%;
+  max-width: 1100px;
+  height: 62px;
+  background: white;
+  border-bottom: 1.15px #E5E7EB solid;
+  position: relative;
+  margin: 0 auto 20px;
+  top: 0;
+}
+
+.define-actions-stepper-inner {
+  width: 100%;
+  max-width: 1008px;
+  height: 30.71px;
+  position: absolute;
+  left: 50%;
+  top: 15.35px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.define-actions-step-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 11.52px;
+  flex: none;
+}
+
+.define-actions-step-circle {
+  width: 30.71px;
+  height: 30.71px;
+  border-radius: 9599.04px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, sans-serif;
+  font-size: 13.44px;
+  font-weight: 600;
+  line-height: 19.2px;
+}
+
+.define-actions-step-label {
+  height: 16.13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, sans-serif;
+  font-size: 13.44px;
+  font-weight: 500;
+  line-height: 19.2px;
+  white-space: nowrap;
+}
+
+.define-actions-step-connector {
+  width: 10.01px;
+  height: 0.95px;
+  background: #D1D5DB;
+  margin: 0 15.35px;
+}
+
+.define-actions-step-item.done .define-actions-step-circle {
+  background: #22C55E;
+  color: #FFFFFF;
+}
+
+.define-actions-step-item.done .define-actions-step-label {
+  color: #16A34A;
+}
+
+.define-actions-step-item.active .define-actions-step-circle {
+  background: #3B82F6;
+  color: #FFFFFF;
+}
+
+.define-actions-step-item.active .define-actions-step-label {
+  color: #2563EB;
+}
+
+.define-actions-step-item.pending .define-actions-step-circle {
+  background: #D1D5DB;
+  color: #4B5563;
+}
+
+.define-actions-step-item.pending .define-actions-step-label {
+  color: #4B5563;
+}
+
+.define-actions-rule-summary-figma {
+  width: 100%;
+  max-width: 870px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: 7.68px;
+  padding: 24px 24px 16px 24px;
+  margin: 0 auto 24px auto;
+  position: relative;
+  top: 0;
+}
+.define-actions-rule-summary-header-figma {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.define-actions-rule-summary-title {
+  color: #1E3A8A;
+  font-size: 15.36px;
+  font-weight: 600;
+}
+.define-actions-review-btn-figma {
+  background: none;
+  border: none;
+  color: #2563EB;
+  font-size: 13.44px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.define-actions-rule-summary-sub {
+  color: #1D4ED8;
+  font-size: 13.44px;
+  margin-bottom: 12px;
+}
+.define-actions-rule-summary-box {
+  background: white;
+  border-radius: 7.68px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13.44px;
+  color: #374151;
+  font-weight: 600;
+}
+.define-actions-rule-summary-if {
+  color: #374151;
+  font-weight: 600;
+}
+.define-actions-rule-summary-chip {
+  background: #DBEAFE;
+  color: #1E40AF;
+  border-radius: 3.84px;
+  padding: 4px 16px;
+  font-weight: 400;
+}
+.define-actions-rule-summary-and {
+  color: #374151;
+  font-weight: 600;
+}
+
+.define-actions-main-card-figma {
+  width: 100%;
+  max-width: 870px;
+  background: white;
+  box-shadow: 0px 0.96px 1.92px rgba(0,0,0,0.05);
+  border-radius: 11.52px;
+  border: 1px solid #E5E7EB;
+  padding: 32px 32px 24px 32px;
+  margin: 0 auto 24px auto;
+  position: relative;
+  top: 0;
+}
+.define-actions-main-card-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.define-actions-main-card-icon-bg {
+  width: 46px;
+  height: 46px;
+  background: #DCFCE7;
+  border-radius: 7.68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.define-actions-main-card-icon {
+  width: 13px;
+  height: 15px;
+  background: #16A34A;
+  border-radius: 2px;
+}
+.define-actions-main-card-title {
+  font-size: 23.04px;
+  font-weight: 700;
+  color: #111827;
+}
+.define-actions-main-card-sub {
+  font-size: 15.36px;
+  color: #4B5563;
+  font-weight: 400;
+}
+.define-actions-blocks {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+.define-actions-action-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+  border-radius: 7.68px;
+  border: 1px solid #E5E7EB;
+  padding: 16px 16px 0 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.define-actions-action-label {
+  font-size: 13.44px;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 4px;
+  min-width: 70px;
+}
+.define-actions-action-delete {
+  background: none;
+  border: none;
+  color: #EF4444;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+}
+.define-actions-action-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.define-actions-action-field-label {
+  font-size: 11.52px;
+  color: #374151;
+  font-weight: 600;
+}
+.define-actions-action-field {
+  background: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 7.68px;
+  padding: 8px 16px;
+  font-size: 13.44px;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+.define-actions-add-action-btn {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 7.68px;
+  color: #4B5563;
+  font-size: 15.36px;
+  font-weight: 500;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.define-actions-quick-templates-figma {
+  width: 100%;
+  max-width: 870px;
+  background: white;
+  box-shadow: 0px 0.96px 1.92px rgba(0,0,0,0.05);
+  border-radius: 11.52px;
+  border: 1px solid #E5E7EB;
+  padding: 34px 32px 32px 32px;
+  margin: 0 auto 24px auto;
+  position: relative;
+  top: 0;
+}
+.define-actions-quick-templates-title {
+  font-size: 17.28px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 24px;
+}
+.define-actions-quick-templates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.define-actions-quick-template-card {
+  background: white;
+  border-radius: 7.68px;
+  border: 1px solid #E5E7EB;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.define-actions-quick-template-icon {
+  width: 15.36px;
+  height: 15.36px;
+  border-radius: 3.84px;
+  margin-bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.define-actions-quick-template-card.red .define-actions-quick-template-icon {
+  background: #FEE2E2;
+  color: #EF4444;
+}
+.define-actions-quick-template-card.purple .define-actions-quick-template-icon {
+  background: #F3E8FF;
+  color: #A855F7;
+}
+.define-actions-quick-template-card.blue .define-actions-quick-template-icon {
+  background: #DBEAFE;
+  color: #3B82F6;
+}
+.define-actions-quick-template-card.green .define-actions-quick-template-icon {
+  background: #DCFCE7;
+  color: #22C55E;
+}
+.define-actions-quick-template-card.orange .define-actions-quick-template-icon {
+  background: #FFEDD5;
+  color: #F97316;
+}
+.define-actions-quick-template-card.yellow .define-actions-quick-template-icon {
+  background: #FEF9C3;
+  color: #EAB308;
+}
+.define-actions-quick-template-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+}
+.define-actions-quick-template-desc {
+  font-size: 13.44px;
+  color: #4B5563;
+  font-weight: 400;
+}
+
+.define-actions-preview-figma {
+  width: 100%;
+  max-width: 870px;
+  background: #F9FAFB;
+  border-radius: 11.52px;
+  margin: 0 auto 24px auto;
+  position: relative;
+  top: 0;
+  padding: 24px 0 24px 0;
+}
+.define-actions-preview-title {
+  font-size: 17.28px;
+  font-weight: 600;
+  color: #111827;
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+.define-actions-preview-box {
+  background: white;
+  border-radius: 7.68px;
+  border: 1px solid #E5E7EB;
+  margin: 0 24px;
+  padding: 24px;
+}
+.define-actions-preview-label {
+  font-size: 13.44px;
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.define-actions-preview-item {
+  font-size: 13.44px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+.define-actions-preview-empty {
+  font-size: 13.44px;
+  color: #6B7280;
+  font-style: italic;
+}
+
+.define-actions-footer-figma {
+  width: 100%;
+  max-width: 870px;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  margin-top: 16px;
+}
+.define-actions-footer-btn {
+  border-radius: 7.68px;
+  font-size: 15.36px;
+  font-family: 'Inter', sans-serif;
+  padding: 13px 0;
+  flex: 1;
+  border: 1px solid #D1D5DB;
+  background: white;
+  color: #374151;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.define-actions-footer-btn.primary {
+  background: #2563EB;
+  color: white;
+  border: none;
+  font-weight: 400;
+}
+.define-actions-footer-btn.outline {
+  background: white;
+  color: #374151;
+  border: 1px solid #D1D5DB;
+}
+
+@media (max-width: 980px) {
+  .define-actions-header-figma,
+  .define-actions-stepper-figma,
+  .define-actions-rule-summary-figma,
+  .define-actions-main-card-figma,
+  .define-actions-quick-templates-figma,
+  .define-actions-preview-figma,
+  .define-actions-footer-figma {
+    max-width: calc(100% - 24px);
+  }
+
+  .define-actions-stepper-figma {
+    max-width: calc(100% - 24px);
+    overflow: hidden;
+  }
+
+  .define-actions-stepper-inner {
+    transform: translateX(-50%) scale(0.88);
+    transform-origin: top center;
+  }
+
+  .define-actions-main-card-header {
+    gap: 14px;
+  }
+
+  .define-actions-action-row {
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+  }
+
+  .define-actions-action-label {
+    min-width: auto;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .define-actions-action-field-group {
+    min-width: 100%;
+  }
+
+  .define-actions-quick-templates-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 860px) {
+  .define-actions-stepper-inner {
+    transform: translateX(-50%) scale(0.76);
+  }
+
+  .define-actions-quick-templates-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .define-actions-quick-templates-grid {
+    grid-template-columns: 1fr;
+  }
+}

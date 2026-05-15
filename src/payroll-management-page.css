@@ -1,0 +1,506 @@
+/* Payroll Management Page */
+
+.payroll-layout {
+  display: flex;
+  height: 100vh;
+  background: #F9FAFB;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.payroll-main {
+  flex: 1;
+  margin-left: 256px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.payroll-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  flex-shrink: 0;
+}
+
+.payroll-title {
+  margin: 0 0 4px;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #111827;
+}
+
+.payroll-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.payroll-breadcrumb a {
+  color: #2563EB;
+  text-decoration: none;
+}
+
+.payroll-breadcrumb span {
+  color: #6B7280;
+}
+
+.payroll-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.payroll-bell-btn {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: #F3F4F6;
+  color: #6B7280;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.payroll-bell-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: #EF4444;
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+}
+
+.payroll-process-btn {
+  border: none;
+  border-radius: 8px;
+  background: #F0A83C;
+  color: #0F2C45;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.payroll-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payroll-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.payroll-stat-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  padding: 10px;
+}
+
+.payroll-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.payroll-stat-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payroll-stat-badge {
+  border-radius: 999px;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 7px;
+}
+
+.payroll-badge-green {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.payroll-badge-blue {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.payroll-badge-purple {
+  background: #F3E8FF;
+  color: #6B21A8;
+}
+
+.payroll-badge-yellow {
+  background: #FEF9C3;
+  color: #854D0E;
+}
+
+.payroll-stat-value {
+  font-size: 33px;
+  line-height: 1;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 7px;
+}
+
+.payroll-stat-title {
+  font-size: 11px;
+  color: #6B7280;
+}
+
+.payroll-mid-row {
+  display: grid;
+  grid-template-columns: 1fr 246px;
+  gap: 8px;
+}
+
+.payroll-chart-card,
+.payroll-dept-card,
+.payroll-table-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.payroll-chart-card,
+.payroll-dept-card {
+  padding: 8px 10px;
+}
+
+.payroll-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.payroll-card-title {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  color: #111827;
+}
+
+.payroll-chart-tabs {
+  display: inline-flex;
+  gap: 2px;
+  background: #F3F4F6;
+  padding: 2px;
+  border-radius: 6px;
+}
+
+.payroll-chart-tab {
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #6B7280;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.payroll-chart-tab.active {
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+.payroll-dept-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.payroll-dept-item {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.payroll-dept-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payroll-dept-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.payroll-dept-sub {
+  font-size: 7px;
+  color: #6B7280;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.payroll-dept-metrics {
+  text-align: right;
+}
+
+.payroll-dept-amount {
+  font-size: 11px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.payroll-dept-share {
+  font-size: 7px;
+  color: #6B7280;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.payroll-table-head {
+  padding: 8px 10px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.payroll-table-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.payroll-control-btn {
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #6B7280;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.payroll-table-wrap {
+  overflow-x: auto;
+}
+
+.payroll-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payroll-table thead tr {
+  background: #F9FAFB;
+}
+
+.payroll-table th {
+  font-size: 7px;
+  color: #6B7280;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
+  padding: 7px 8px;
+  border-bottom: 1px solid #E5E7EB;
+  white-space: nowrap;
+}
+
+.payroll-table td {
+  font-size: 8px;
+  color: #374151;
+  padding: 7px 8px;
+  border-bottom: 1px solid #F3F4F6;
+  white-space: nowrap;
+}
+
+.payroll-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.payroll-employee-cell {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.payroll-avatar {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 8px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.payroll-employee-name {
+  font-size: 8px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.payroll-employee-code {
+  margin-top: 2px;
+  font-size: 6px;
+  color: #6B7280;
+  line-height: 1;
+}
+
+.payroll-dept-chip {
+  border-radius: 999px;
+  padding: 2px 6px;
+  font-size: 6px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.payroll-dept-chip.design {
+  background: #FFEDD5;
+  color: #9A3412;
+}
+
+.payroll-dept-chip.engineering {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.payroll-dept-chip.marketing {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.payroll-dept-chip.sales {
+  background: #F3E8FF;
+  color: #6B21A8;
+}
+
+.payroll-dept-chip.hr {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.payroll-net-pay {
+  color: #111827;
+  font-weight: 700;
+}
+
+.payroll-status {
+  border-radius: 999px;
+  padding: 3px 7px;
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.payroll-status.paid {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.payroll-status.processing {
+  background: #FEF9C3;
+  color: #854D0E;
+}
+
+.payroll-status.pending {
+  background: #FEF9C3;
+  color: #854D0E;
+}
+
+.payroll-row-action-btn {
+  border: none;
+  background: transparent;
+  color: #9CA3AF;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.payroll-pagination {
+  border-top: 1px solid #E5E7EB;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payroll-pagination-text {
+  font-size: 8px;
+  color: #6B7280;
+}
+
+.payroll-pagination-btns {
+  display: flex;
+  gap: 5px;
+}
+
+.payroll-page-btn {
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  color: #6B7280;
+  border-radius: 6px;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 3px 7px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.payroll-page-btn.active {
+  border-color: #2563EB;
+  background: #2563EB;
+  color: #FFFFFF;
+}

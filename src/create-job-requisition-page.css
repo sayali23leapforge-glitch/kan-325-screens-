@@ -1,0 +1,268 @@
+/* Create Job Requisition Page */
+
+.cjr-layout {
+  display: flex;
+  height: 100vh;
+  background: #F3F4F6;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.cjr-main {
+  flex: 1;
+  margin-left: 256px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cjr-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  flex-shrink: 0;
+}
+
+.cjr-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cjr-title {
+  margin: 0;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cjr-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.cjr-breadcrumb a {
+  color: #2563EB;
+  text-decoration: none;
+}
+
+.cjr-breadcrumb span {
+  color: #6B7280;
+}
+
+.cjr-breadcrumb span:last-child {
+  color: #374151;
+}
+
+.cjr-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cjr-bell-btn {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 6px;
+  background: #F3F4F6;
+  color: #6B7280;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cjr-bell-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #EF4444;
+  color: #FFFFFF;
+  font-size: 7px;
+  line-height: 10px;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+}
+
+.cjr-save-draft-link {
+  border: none;
+  background: transparent;
+  color: #6B7280;
+  font-size: 9px;
+  line-height: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cjr-content-wrap {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.cjr-form-card {
+  width: 100%;
+  max-width: 760px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(15, 23, 42, 0.02);
+  padding: 12px;
+}
+
+.cjr-section {
+  border: 1px solid #E5E7EB;
+  border-radius: 2px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cjr-section-last {
+  margin-bottom: 8px;
+}
+
+.cjr-section-title {
+  margin: 0 0 8px;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cjr-grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 10px;
+}
+
+.cjr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cjr-field span {
+  font-size: 8px;
+  line-height: 11px;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.cjr-field input,
+.cjr-field textarea {
+  width: 100%;
+  border: 1px solid #E5E7EB;
+  border-radius: 2px;
+  background: #FFFFFF;
+  font-size: 8px;
+  color: #111827;
+  padding: 6px 8px;
+  outline: none;
+  font-family: inherit;
+  line-height: 11px;
+}
+
+.cjr-field input::placeholder,
+.cjr-field textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.cjr-field textarea {
+  resize: none;
+  min-height: 52px;
+}
+
+.cjr-stack-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cjr-check-grid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px 10px;
+}
+
+.cjr-check-grid label,
+.cjr-process-list label,
+.cjr-check-stack label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  line-height: 11px;
+  color: #4B5563;
+}
+
+.cjr-check-grid input,
+.cjr-process-list input,
+.cjr-check-stack input {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  accent-color: #3B82F6;
+}
+
+.cjr-salary-row {
+  margin-bottom: 2px;
+}
+
+.cjr-process-list {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 10px;
+}
+
+.cjr-check-stack {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cjr-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.cjr-btn {
+  border: 1px solid #E5E7EB;
+  border-radius: 2px;
+  font-size: 8px;
+  line-height: 11px;
+  font-weight: 600;
+  padding: 6px 10px;
+  background: #FFFFFF;
+  color: #374151;
+  cursor: pointer;
+}
+
+.cjr-btn-draft {
+  background: #F9FAFB;
+}
+
+.cjr-btn-submit {
+  border-color: #F0A83C;
+  background: #F0A83C;
+  color: #1F2937;
+}

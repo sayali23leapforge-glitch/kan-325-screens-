@@ -1,10 +1,18 @@
-import { FiSettings, FiLogOut, FiBell, FiChevronRight } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
+import { FiSettings, FiLogOut, FiBell, FiChevronRight, FiLifeBuoy } from 'react-icons/fi'
 import './profile-menu.css'
 
 function ProfileMenuDropdown({ onClose, onSignOut }) {
+  const navigate = useNavigate()
+
   const handleMenuItemClick = () => {
     // Items can implement their own handlers
     onClose()
+  }
+
+  const handleSupportDeskClick = () => {
+    onClose()
+    navigate('/support-desk/tickets')
   }
 
   const handleSignOutClick = () => {
@@ -121,6 +129,21 @@ function ProfileMenuDropdown({ onClose, onSignOut }) {
           <div className="menu-item-content">
             <div className="menu-item-title">Notifications</div>
             <div className="menu-item-subtitle">Manage your alerts</div>
+          </div>
+          <FiChevronRight className="menu-item-chevron" />
+        </button>
+
+        <button
+          type="button"
+          className="profile-menu-item profile-menu-item-support-desk"
+          onClick={handleSupportDeskClick}
+        >
+          <div className="menu-item-icon support-icon">
+            <FiLifeBuoy />
+          </div>
+          <div className="menu-item-content">
+            <div className="menu-item-title">Support Desk</div>
+            <div className="menu-item-subtitle">Open support dashboard</div>
           </div>
           <FiChevronRight className="menu-item-chevron" />
         </button>

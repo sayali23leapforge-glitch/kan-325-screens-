@@ -250,6 +250,49 @@ const RECENT_CHANGES = [
   { id: 3, action: 'Security Review Completed', time: '1 week ago' },
 ]
 
+const AUDIT_LOG_DATA = [
+  {
+    id: 1,
+    timestamp: 'Dec 22, 2024',
+    event: 'Token Revoked',
+    eventType: 'critical',
+    user: 'Michael Chen',
+    resource: 'tok_prod_a8f3j2k9m1n4p7q2',
+    ipAddress: '192.168.1.45',
+    status: 'Critical',
+  },
+  {
+    id: 2,
+    timestamp: 'Dec 22, 2024',
+    event: 'Token Revocation Initiated',
+    eventType: 'warning',
+    user: 'Michael Chen',
+    resource: 'tok_prod_a8f3j2k9m1n4p7q2',
+    ipAddress: '192.168.1.45',
+    status: 'Warning',
+  },
+  {
+    id: 3,
+    timestamp: 'Dec 22, 2024',
+    event: 'Token Used',
+    eventType: 'success',
+    user: 'Alex Thompson',
+    resource: 'tok_dev_k9m1n4p7q2a8f3j2',
+    ipAddress: '10.0.0.15',
+    status: 'Success',
+  },
+  {
+    id: 4,
+    timestamp: 'Dec 22, 2024',
+    event: 'Authentication Failed',
+    eventType: 'failed',
+    user: 'System Admin',
+    resource: 'tok_service_n4p7q2a8f3j2k9m1',
+    ipAddress: '172.16.0.30',
+    status: 'Failed',
+  },
+]
+
 function ProductsApplicationsPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('Product Overview')
@@ -308,6 +351,10 @@ function ProductsApplicationsPage() {
   const activeRoles = Object.values(roleToggles).filter(Boolean).length
   const systemRoles = ROLES_DATA.filter(r => r.type === 'System Role').length
   const customRoles = ROLES_DATA.filter(r => r.type === 'Custom Role').length
+
+  const handleExportLog = () => {
+    console.log('Exporting audit log...')
+  }
 
   return (
     <main className="pam-layout">
@@ -368,7 +415,7 @@ function ProductsApplicationsPage() {
 
         {/* Tab Bar */}
         <div className="pam-tabs">
-          {['Overview', 'Users', 'Roles', 'Features', 'Access'].map((tab) => {
+          {['Overview', 'Users', 'Roles', 'Features', 'Access', 'Tokens'].map((tab) => {
             const tabKey = tab === 'Overview' ? 'Product Overview' : tab;
             return (
               <button
@@ -874,6 +921,95 @@ function ProductsApplicationsPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </>
+          )}
+
+          {activeTab === 'Tokens' && (
+            <>
+              {/* Audit Log Header */}
+              <div className="pam-section-header">
+                <div>
+                  <h3 className="pam-section-title">Audit Log</h3>
+                  <p className="pam-section-subtitle">Detailed log of all token-related activities and security events</p>
+                </div>
+                <div className="pam-header-buttons">
+                  <button className="pam-filter-btn">
+                    <FiFilter size={16} />
+                    <span>Filter</span>
+                  </button>
+                  <button className="pam-export-btn" onClick={handleExportLog}>
+                    <span>Export</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Search & Filter Row */}
+              <div className="pam-audit-search-filter-row">
+                <div className="pam-search-box">
+                  <FiSearch className="pam-search-icon" size={16} />
+                  <input
+                    type="text"
+                    placeholder="Search audit logs..."
+                    className="pam-search-input"
+                  />
+                </div>
+                <div className="pam-filter-dropdowns">
+                  <button className="pam-filter-dropdown">
+                    <span>All Events</span>
+                    <FiChevronDown size={14} />
+                  </button>
+                  <button className="pam-filter-dropdown">
+                    <span>All Users</span>
+                    <FiChevronDown size={14} />
+                  </button>
+                  <button className="pam-filter-dropdown">
+                    <span>Last 24 hours</span>
+                    <FiChevronDown size={14} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Audit Log Table */}
+              <div className="pam-audit-table-wrapper">
+                <table className="pam-audit-table">
+                  <thead>
+                    <tr>
+                      <th>Timestamp</th>
+                      <th>Event</th>
+                      <th>User</th>
+                      <th>Resource</th>
+                      <th>IP Address</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {AUDIT_LOG_DATA.map((log) => (
+                      <tr key={log.id}>
+                        <td>
+                          <span className="pam-timestamp">{log.timestamp}</span>
+                        </td>
+                        <td>
+                          <span className="pam-event-name">{log.event}</span>
+                        </td>
+                        <td>
+                          <span className="pam-user-name">{log.user}</span>
+                        </td>
+                        <td>
+                          <span className="pam-resource">{log.resource}</span>
+                        </td>
+                        <td>
+                          <span className="pam-ip-address">{log.ipAddress}</span>
+                        </td>
+                        <td>
+                          <span className={`pam-audit-status ${log.eventType}`}>
+                            {log.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </>
           )}

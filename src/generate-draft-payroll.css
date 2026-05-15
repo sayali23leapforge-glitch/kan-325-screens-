@@ -1,0 +1,602 @@
+.gdp-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f9fafb;
+  font-family: Inter, sans-serif;
+}
+
+.gdp-main {
+  margin-left: 256px;
+  width: calc(100% - 256px);
+  min-height: 100vh;
+  padding: 12px;
+}
+
+.gdp-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gdp-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #111827;
+}
+
+.gdp-breadcrumb {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.gdp-breadcrumb span:first-child,
+.gdp-breadcrumb span:nth-child(3) {
+  color: #2563eb;
+}
+
+.gdp-bell {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.gdp-bell span {
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.gdp-hero {
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 14px;
+  background: linear-gradient(90deg, #059669, #047857);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.gdp-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gdp-hero-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gdp-hero h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.gdp-hero p {
+  margin: 2px 0 0;
+  font-size: 11px;
+}
+
+.gdp-hero-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.gdp-hero-actions button {
+  height: 34px;
+  border-radius: 8px;
+  border: 0;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.gdp-hero-actions .generate-btn {
+  background: #fff;
+  color: #059669;
+}
+
+.gdp-hero-actions .history-btn {
+  background: #065f46;
+  color: #fff;
+}
+
+.gdp-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.gdp-config-card {
+  margin-top: 10px;
+  padding: 12px;
+}
+
+.gdp-config-card h3,
+.gdp-preview-card h3,
+.gdp-status-card h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 16px;
+}
+
+.gdp-config-card p,
+.gdp-preview-card p {
+  margin: 3px 0 0;
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.gdp-grid.two-col {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gdp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gdp-field span {
+  color: #4b5563;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.gdp-field input,
+.gdp-input {
+  height: 34px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+}
+
+.gdp-input input {
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gdp-input.read-only {
+  gap: 8px;
+}
+
+.gdp-config-card h4 {
+  margin: 12px 0 0;
+  color: #111827;
+  font-size: 13px;
+}
+
+.gdp-options-grid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.gdp-options-grid label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #4b5563;
+}
+
+.gdp-options-grid input {
+  accent-color: #2563eb;
+}
+
+.gdp-summary-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.gdp-summary-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  padding: 12px;
+}
+
+.gdp-summary-card .icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gdp-summary-card .icon.blue { background: #dbeafe; color: #2563eb; }
+.gdp-summary-card .icon.green { background: #dcfce7; color: #16a34a; }
+.gdp-summary-card .icon.orange { background: #ffedd5; color: #ea580c; }
+.gdp-summary-card .icon.purple { background: #f3e8ff; color: #9333ea; }
+
+.gdp-summary-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 28px;
+  color: #111827;
+}
+
+.gdp-summary-card p {
+  margin: 2px 0 0;
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.gdp-bottom-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 10px;
+}
+
+.gdp-preview-card,
+.gdp-status-card {
+  padding: 12px;
+}
+
+.gdp-preview-list {
+  margin-top: 10px;
+}
+
+.gdp-preview-row {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.gdp-preview-row:last-child {
+  border-bottom: 0;
+}
+
+.gdp-preview-row .avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1e40af;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.gdp-preview-row .copy strong {
+  display: block;
+  color: #111827;
+  font-size: 12px;
+}
+
+.gdp-preview-row .copy span {
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.gdp-preview-row .pay {
+  font-size: 12px;
+  color: #111827;
+}
+
+.full-preview-btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 36.84px;
+  border: 0;
+  border-radius: 7.68px;
+  background: #2563eb;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13.44px;
+  font-weight: 600;
+  line-height: 19.2px;
+  font-family: Inter, sans-serif;
+}
+
+.full-preview-btn-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gdp-history-card {
+  margin-top: 10px;
+  border-radius: 11.52px;
+  box-shadow: 0 0.96px 1.92px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.gdp-history-header {
+  min-height: 97px;
+  padding: 24px 22px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gdp-history-header h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 17.28px;
+  font-weight: 700;
+  line-height: 26.88px;
+}
+
+.gdp-history-header p {
+  margin: 3px 0 0;
+  color: #6b7280;
+  font-size: 13.44px;
+  font-weight: 400;
+  line-height: 19.2px;
+}
+
+.gdp-history-view-all {
+  height: 36.84px;
+  border: 1px solid #e5e7eb;
+  border-radius: 7.68px;
+  background: #fff;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #111827;
+  font-size: 13.44px;
+  font-weight: 400;
+  line-height: 19.2px;
+}
+
+.gdp-history-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gdp-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 960px;
+}
+
+.gdp-history-table thead tr {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.gdp-history-table th {
+  height: 46px;
+  text-align: left;
+  padding: 0 22px;
+  color: #6b7280;
+  font-size: 11.52px;
+  font-weight: 600;
+  line-height: 15.36px;
+  letter-spacing: 0.58px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.gdp-history-table tbody tr {
+  height: 54px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.gdp-history-table tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.gdp-history-table td {
+  padding: 0 22px;
+  color: #111827;
+  font-size: 13.44px;
+  font-weight: 400;
+  line-height: 19.2px;
+  white-space: nowrap;
+}
+
+.gdp-history-draft-id,
+.gdp-history-amount {
+  font-weight: 600;
+}
+
+.gdp-history-generated {
+  color: #4b5563;
+}
+
+.gdp-history-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  min-height: 21.49px;
+  border-radius: 9999px;
+  font-size: 11.52px;
+  font-weight: 600;
+  line-height: 15.36px;
+}
+
+.gdp-history-status.approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.gdp-history-status.processed {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.gdp-history-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gdp-history-actions button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gdp-history-actions button:first-child {
+  color: #2563eb;
+}
+
+.gdp-history-actions button:last-child {
+  color: #16a34a;
+}
+
+.gdp-step-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gdp-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.gdp-step .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.gdp-step.completed .dot {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.gdp-step.progress .dot {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.gdp-step.pending .dot {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.gdp-processing-card {
+  margin-top: 12px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.gdp-processing-card strong {
+  display: block;
+  color: #1e40af;
+  font-size: 12px;
+}
+
+.gdp-processing-card p {
+  margin: 3px 0 0;
+  color: #2563eb;
+  font-size: 10px;
+}
+
+.gdp-review-payroll-btn {
+  margin-top: 12px;
+  width: 100%;
+  height: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .gdp-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .gdp-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .gdp-header,
+  .gdp-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .gdp-grid.two-col,
+  .gdp-options-grid,
+  .gdp-summary-grid,
+  .gdp-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gdp-history-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

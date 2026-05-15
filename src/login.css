@@ -61,19 +61,38 @@
   gap: 18px;
 }
 
+.login-card .card-head {
+  display: block;
+}
+
 .card-head h2 {
   margin: 0;
-  font-size: 28px;
-  line-height: 1.15;
+  width: 166px;
+  min-height: 27.65px;
+  font-size: 23.04px;
+  line-height: 30.72px;
   font-weight: 700;
-  color: #0f2c45;
+  color: #2e3a46;
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  word-wrap: break-word;
 }
 
 .card-head p {
-  margin: 8px 0 0;
-  font-size: 13px;
-  color: #6b7280;
+  margin: 11.89px 0 0;
+  width: 280.29px;
+  min-height: 16.13px;
+  font-size: 13.44px;
+  line-height: 19.2px;
+  color: #4b5563;
   font-weight: 400;
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  word-wrap: break-word;
 }
 
 .login-form {

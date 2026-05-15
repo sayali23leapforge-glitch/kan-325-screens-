@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import DashboardHeader from './DashboardHeader'
 import AnnouncementBanner from './AnnouncementBanner'
@@ -27,6 +28,7 @@ import {
 } from 'react-icons/fi'
 
 function Dashboard() {
+  const navigate = useNavigate()
   const [showBanner, setShowBanner] = useState(true)
   const [dashboardView, setDashboardView] = useState('default')
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -119,7 +121,7 @@ function Dashboard() {
 
   return (
     <main className="dashboard-layout">
-      <Sidebar sidebarOpen={sidebarOpen} />
+      <Sidebar sidebarOpen={sidebarOpen} onSwitchToHRM={() => navigate('/hrm/dashboard')} />
       <div className={`sidebar-overlay ${sidebarOpen ? 'active' : ''}`} onClick={() => setSidebarOpen(false)} />
       <section className="dashboard-main">
         <DashboardHeader 

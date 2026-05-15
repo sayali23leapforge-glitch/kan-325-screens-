@@ -1,0 +1,618 @@
+.had-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f9fafb;
+  font-family: Inter, sans-serif;
+}
+
+.had-main {
+  margin-left: 256px;
+  width: calc(100% - 256px);
+  min-height: 100vh;
+  padding-bottom: 18px;
+}
+
+.had-header,
+.had-stats-row,
+.had-calendar-banner,
+.had-quick-actions,
+.had-filter-strip,
+.had-table-card {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.had-header {
+  margin-top: 8px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.had-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 31px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.had-breadcrumb {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 14px;
+  color: #9ca3af;
+}
+
+.had-breadcrumb .link {
+  color: #2563eb;
+}
+
+.had-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.had-calendar-chip {
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 6px;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 10px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.had-bell {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #4b5563;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.had-bell span {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 700;
+}
+
+.had-review-btn {
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.had-review-btn:hover {
+  background: #1d4ed8;
+}
+
+.had-stats-row {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.had-stat-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+}
+
+.had-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.had-stat-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.had-stat-icon.orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.had-stat-icon.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.had-stat-icon.red {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.had-stat-icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.had-stat-badge {
+  min-height: 18px;
+  border-radius: 999px;
+  padding: 0 8px;
+  font-size: 9px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.had-stat-badge.orange {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.had-stat-badge.green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.had-stat-badge.red {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.had-stat-badge.blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.had-stat-value {
+  margin-top: 8px;
+  color: #111827;
+  font-size: 33px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.had-stat-title {
+  margin-top: 4px;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.had-stat-note {
+  margin-top: 2px;
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+.had-calendar-banner {
+  margin-top: 10px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 12px;
+  background: linear-gradient(90deg, #eff6ff 0%, #f0fdf4 100%);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.had-banner-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #dbeafe;
+  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.had-banner-copy h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.had-banner-copy p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.had-banner-meta {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #2563eb;
+  font-size: 10px;
+}
+
+.had-banner-meta span:first-child {
+  color: #16a34a;
+}
+
+.had-banner-close {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.had-quick-actions {
+  margin-top: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.had-quick-actions h3 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.had-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.had-action-card {
+  min-height: 60px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4b5563;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.had-action-card.filled {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.had-action-icon.green {
+  color: #16a34a;
+}
+
+.had-action-icon.blue {
+  color: #2563eb;
+}
+
+.had-action-icon.purple {
+  color: #a855f7;
+}
+
+.had-action-icon.orange {
+  color: #ea580c;
+}
+
+.had-filter-strip {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.had-date-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #374151;
+}
+
+.had-date-row .synced {
+  color: #16a34a;
+  font-size: 10px;
+}
+
+.had-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.had-tabs {
+  height: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+}
+
+.had-tabs button {
+  height: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0 10px;
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.had-tabs button.active {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.had-control-btn {
+  height: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4b5563;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+}
+
+.had-table-card {
+  margin-top: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.had-table-head {
+  border-bottom: 1px solid #f3f4f6;
+  padding: 10px 12px;
+}
+
+.had-table-head h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.had-table-wrap {
+  overflow-x: auto;
+}
+
+.had-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.had-table-card th {
+  background: #f9fafb;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 12px;
+}
+
+.had-table-card td {
+  border-top: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 11px;
+  padding: 10px 12px;
+}
+
+.had-table-card tr.synced-row {
+  background: #f0fdf4;
+}
+
+.employee-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.employee-cell .avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #60a5fa, #a78bfa);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.employee-cell .name {
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.employee-cell .role {
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.type-pill,
+.priority-pill,
+.status-pill {
+  border-radius: 999px;
+  min-height: 20px;
+  padding: 0 8px;
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.type-pill.annual {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.type-pill.sick {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.type-pill.casual {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.type-pill.maternity {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.priority-pill.high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.priority-pill.med {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.priority-pill.low {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status-pill.pending {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.status-pill.approved {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.days {
+  font-weight: 700;
+}
+
+.action-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.action-group button {
+  height: 20px;
+  border-radius: 4px;
+  border: 0;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.action-group .approve,
+.action-group .reject {
+  color: #ffffff;
+  padding: 0 6px;
+}
+
+.action-group .approve {
+  background: #16a34a;
+}
+
+.action-group .reject {
+  background: #dc2626;
+}
+
+.action-group .view {
+  width: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .had-stats-row,
+  .had-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .had-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .had-filter-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .had-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .had-stats-row,
+  .had-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .had-header-actions,
+  .had-controls {
+    flex-wrap: wrap;
+  }
+}

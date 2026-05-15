@@ -1,0 +1,520 @@
+/* Employee Self Review Page */
+
+.esr-layout {
+  display: flex;
+  height: 100vh;
+  background: #F3F4F6;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.esr-main {
+  flex: 1;
+  margin-left: 256px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.esr-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.esr-title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #111827;
+}
+
+.esr-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.esr-breadcrumb a {
+  color: #2563EB;
+  text-decoration: none;
+}
+
+.esr-breadcrumb span {
+  color: #6B7280;
+}
+
+.esr-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.esr-bell-btn {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: #F3F4F6;
+  color: #6B7280;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.esr-bell-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: #EF4444;
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+}
+
+.esr-save-draft-btn {
+  border: none;
+  border-radius: 7.68px;
+  background: #F0A83C;
+  color: #0F2C45;
+  height: 34px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.esr-content {
+  padding: 14px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.esr-top-card,
+.esr-progress-card,
+.esr-section-card,
+.esr-footer-actions {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.esr-top-card {
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.esr-top-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex: none;
+}
+
+.esr-top-copy h2 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #111827;
+  font-weight: 700;
+}
+
+.esr-top-copy p {
+  margin: 4px 0 8px;
+  color: #6B7280;
+  font-size: 11px;
+}
+
+.esr-top-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.esr-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.esr-chip-blue {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.esr-chip-yellow {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.esr-chip-green {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.esr-progress-card {
+  padding: 12px;
+}
+
+.esr-progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.esr-progress-head h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.esr-progress-head span {
+  color: #6B7280;
+  font-size: 10.5px;
+}
+
+.esr-progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #E5E7EB;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.esr-progress-fill {
+  width: 75%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #3B82F6 0%, #10B981 100%);
+}
+
+.esr-progress-labels {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  font-size: 9.5px;
+}
+
+.esr-progress-ok,
+.esr-progress-pending {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.esr-progress-ok {
+  background: #ECFDF5;
+  color: #065F46;
+}
+
+.esr-progress-pending {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.esr-section-card {
+  padding: 12px;
+}
+
+.esr-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.esr-section-head h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.esr-section-status {
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.esr-badge-green {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.esr-badge-yellow {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.esr-goal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.esr-goal-card {
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.esr-goal-blue {
+  background: #EFF6FF;
+}
+
+.esr-goal-purple {
+  background: #F5F3FF;
+}
+
+.esr-goal-orange {
+  background: #FFF7ED;
+}
+
+.esr-goal-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.esr-goal-number {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.esr-goal-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.esr-goal-meta h4 {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.esr-goal-meta p {
+  margin: 2px 0 0;
+  font-size: 10px;
+  color: #6B7280;
+}
+
+.esr-goal-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.esr-goal-progress-row span {
+  font-size: 10px;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.esr-goal-progress-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.16);
+  overflow: hidden;
+}
+
+.esr-goal-progress-fill {
+  height: 100%;
+  background: #10B981;
+  border-radius: inherit;
+}
+
+.esr-field-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #374151;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.esr-goal-textarea,
+.esr-large-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #374151;
+  font-size: 10.5px;
+  line-height: 1.45;
+  font-family: 'Inter', sans-serif;
+  padding: 8px;
+  resize: vertical;
+}
+
+.esr-large-textarea {
+  background: #F9FAFB;
+  margin-bottom: 10px;
+}
+
+.esr-summary-card .esr-large-textarea:last-child {
+  margin-bottom: 0;
+}
+
+.esr-competency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.esr-competency-item {
+  border: 1px solid #E5E7EB;
+  border-radius: 7px;
+  background: #F9FAFB;
+  padding: 8px;
+}
+
+.esr-competency-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.esr-competency-head h4 {
+  margin: 0;
+  font-size: 10.5px;
+  color: #111827;
+}
+
+.esr-competency-head span {
+  font-size: 9.5px;
+  color: #6B7280;
+  font-weight: 600;
+}
+
+.esr-dot-row {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 5px;
+}
+
+.esr-dot {
+  width: 10px;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.esr-competency-item p {
+  margin: 0;
+  font-size: 9px;
+  line-height: 1.3;
+  color: #6B7280;
+}
+
+.esr-footer-actions {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.esr-footer-note {
+  color: #6B7280;
+  font-size: 11px;
+}
+
+.esr-footer-right {
+  display: flex;
+  gap: 8px;
+}
+
+.esr-footer-btn {
+  height: 32px;
+  border-radius: 7px;
+  padding: 0 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.esr-btn-ghost {
+  border: 1px solid #D1D5DB;
+  background: #FFFFFF;
+  color: #374151;
+}
+
+.esr-btn-outline {
+  border: 1px solid #D1D5DB;
+  background: #F9FAFB;
+  color: #374151;
+}
+
+.esr-btn-primary {
+  border: none;
+  background: #7C3AED;
+  color: #FFFFFF;
+}
+
+@media (max-width: 1200px) {
+  .esr-progress-labels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .esr-competency-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

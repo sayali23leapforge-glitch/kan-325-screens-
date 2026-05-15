@@ -1,0 +1,607 @@
+.leave-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fafb;
+  font-family: Inter, sans-serif;
+}
+
+.leave-main {
+  margin-left: 256px;
+  width: calc(100% - 256px);
+  min-height: 100vh;
+}
+
+.leave-header {
+  height: 105px;
+  padding: 20px 30px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leave-title {
+  margin: 0;
+  color: #111827;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.leave-breadcrumb {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.leave-breadcrumb span:first-child,
+.leave-breadcrumb span:nth-child(3) {
+  color: #2563eb;
+}
+
+.leave-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leave-bell-btn {
+  position: relative;
+  width: 32px;
+  height: 42px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leave-bell-badge {
+  position: absolute;
+  top: -3px;
+  right: -2px;
+  width: 19px;
+  height: 19px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leave-settings-btn {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.leave-settings-btn:hover {
+  background: #f3f4f6;
+}
+
+.leave-request-btn {
+  height: 38px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.leave-review-btn {
+  height: 38px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.leave-review-btn:hover {
+  background: #1d4ed8;
+}
+
+.leave-content {
+  padding: 22px 30px;
+}
+
+.leave-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.leave-stat-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+.leave-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.leave-stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leave-stat-icon.orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.leave-stat-icon.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.leave-stat-icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.leave-stat-icon.purple {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.leave-stat-badge {
+  border-radius: 999px;
+  min-height: 22px;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.leave-stat-badge.orange {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.leave-stat-badge.green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.leave-stat-badge.blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.leave-stat-badge.purple {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.leave-stat-value {
+  color: #111827;
+  font-size: 39px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.leave-stat-label {
+  margin-top: 8px;
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.leave-middle-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 372px;
+  gap: 12px;
+}
+
+.leave-chart-card,
+.leave-balance-card,
+.leave-table-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.leave-chart-card,
+.leave-balance-card {
+  min-height: 442px;
+}
+
+.leave-card-header {
+  padding: 20px 18px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leave-card-header h2,
+.leave-balance-card h2,
+.leave-table-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.leave-select-btn {
+  height: 34px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0 12px;
+  color: #374151;
+  font-size: 11px;
+}
+
+.leave-chart-wrap {
+  padding: 24px;
+  height: 420px;
+  overflow: hidden;
+}
+
+.leave-chart-canvas-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.leave-balance-card {
+  padding: 18px;
+}
+
+.leave-balance-list {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.leave-balance-row {
+  display: flex;
+  justify-content: space-between;
+  color: #374151;
+  font-size: 13px;
+}
+
+.leave-balance-row strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.leave-track {
+  margin-top: 6px;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.leave-progress {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.leave-progress.blue {
+  background: #2563eb;
+}
+
+.leave-progress.red {
+  background: #dc2626;
+}
+
+.leave-progress.green {
+  background: #16a34a;
+}
+
+.leave-progress.purple {
+  background: #9333ea;
+}
+
+.leave-progress.orange {
+  background: #ea580c;
+}
+
+.leave-toolbar {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leave-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-size: 15px;
+}
+
+.leave-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leave-tabs {
+  height: 36px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  display: inline-flex;
+}
+
+.leave-tabs button {
+  border: 0;
+  background: transparent;
+  color: #4b5563;
+  font-size: 12px;
+  padding: 0 14px;
+}
+
+.leave-tabs button.active {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.leave-toolbar-actions {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.leave-control-btn {
+  height: 36px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.leave-table-card {
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.leave-table-header {
+  padding: 18px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.leave-table-wrap {
+  overflow-x: auto;
+}
+
+.leave-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leave-table-card thead {
+  background: #f9fafb;
+}
+
+.leave-table-card th {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+}
+
+.leave-table-card td {
+  color: #374151;
+  font-size: 13px;
+  padding: 14px 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.leave-employee-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leave-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #60a5fa, #a78bfa);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leave-employee-name {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.leave-employee-role {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.leave-type-pill,
+.leave-status-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.leave-type-pill.annual {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.leave-type-pill.sick {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.leave-type-pill.casual {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.leave-type-pill.maternity {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.leave-days {
+  color: #111827;
+  font-weight: 700;
+}
+
+.leave-status-pill.pending {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.leave-status-pill.approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.leave-actions {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.leave-actions button,
+.view.single {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.leave-actions .approve {
+  background: #16a34a;
+}
+
+.leave-actions .reject {
+  background: #dc2626;
+}
+
+.leave-actions .view,
+.view.single {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.leave-table-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.leave-pagination {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.leave-pagination button {
+  height: 34px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-size: 13px;
+  padding: 0 12px;
+}
+
+.leave-pagination button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .leave-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .leave-header,
+  .leave-toolbar,
+  .leave-table-footer {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .leave-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leave-middle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leave-toolbar-right {
+    flex-wrap: wrap;
+  }
+}

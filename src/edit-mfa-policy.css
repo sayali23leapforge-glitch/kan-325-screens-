@@ -1,0 +1,610 @@
+.mfa-policy-config-page {
+  width: 100%;
+  background: #F9FAFB;
+  min-height: 100vh;
+}
+
+/* Header */
+.mfa-policy-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px #E5E7EB solid;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mfa-header-content {
+  flex: 1;
+}
+
+.mfa-header-title {
+  font-size: 23.04px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  margin-bottom: 12px;
+  line-height: 30.72px;
+}
+
+.mfa-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mfa-breadcrumb-link {
+  font-size: 13.44px;
+  font-weight: 400;
+  color: #2563EB;
+  cursor: pointer;
+}
+
+.mfa-breadcrumb-link:last-child {
+  color: #4B5563;
+}
+
+.mfa-breadcrumb-separator {
+  color: #9CA3AF;
+  font-size: 13.44px;
+}
+
+.mfa-header-buttons {
+  display: flex;
+  gap: 12px;
+  margin-left: 40px;
+}
+
+.mfa-btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: white;
+  border: 1px #D1D5DB solid;
+  border-radius: 7.68px;
+  font-size: 15.36px;
+  font-weight: 400;
+  color: #4B5563;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mfa-btn-back:hover {
+  background: #F3F4F6;
+}
+
+.mfa-btn-save {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #2563EB;
+  border: none;
+  border-radius: 7.68px;
+  font-size: 15.36px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mfa-btn-save:hover {
+  background: #1D4ED8;
+}
+
+/* Warning Banner */
+.mfa-warning-banner {
+  display: flex;
+  gap: 18px;
+  margin: 32px;
+  padding: 24px;
+  background: #FEFCE8;
+  border-left: 3.46px #FACC15 solid;
+  border-radius: 7.68px;
+}
+
+.mfa-warning-banner svg {
+  color: #CA8A04;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mfa-banner-content {
+  flex: 1;
+}
+
+.mfa-banner-title {
+  font-size: 13.44px;
+  font-weight: 600;
+  color: #854D0E;
+  margin: 0 0 8px 0;
+}
+
+.mfa-banner-text {
+  font-size: 13.44px;
+  font-weight: 400;
+  color: #A16207;
+  margin: 0;
+  line-height: 19.2px;
+}
+
+/* Main Card */
+.mfa-main-card {
+  margin: 32px;
+  background: white;
+  border-radius: 11.52px;
+  border: 1px #E5E7EB solid;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Section Header */
+.mfa-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  border-bottom: 1px #E5E7EB solid;
+}
+
+.mfa-section-title {
+  font-size: 17.28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.mfa-section-description {
+  font-size: 15.36px;
+  font-weight: 400;
+  color: #4B5563;
+  margin: 0;
+  line-height: 23.04px;
+  max-width: 600px;
+}
+
+.mfa-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mfa-toggle-label {
+  font-size: 13.44px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.mfa-toggle-switch {
+  position: relative;
+  width: 38.39px;
+  height: 23.04px;
+  background: #2563EB;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.mfa-toggle-input {
+  display: none;
+}
+
+.mfa-toggle-thumb {
+  position: absolute;
+  width: 15.35px;
+  height: 15.35px;
+  background: white;
+  border-radius: 9999px;
+  top: 3.83px;
+  right: 3.83px;
+  transition: all 0.3s ease;
+}
+
+/* Content Sections */
+.mfa-enforcement-section,
+.mfa-methods-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 32px;
+  border-bottom: 1px #E5E7EB solid;
+}
+
+.mfa-section-box {
+  background: #EFF6FF;
+  border: 1px #BFDBFE solid;
+  border-radius: 7.68px;
+  padding: 24px;
+}
+
+.mfa-enforcement-section .mfa-section-box:nth-child(2) {
+  background: #FFF7ED;
+  border-color: #FED7AA;
+}
+
+.mfa-methods-section .mfa-section-box:nth-child(1) {
+  background: #FAF5FF;
+  border-color: #E9D5FF;
+}
+
+.mfa-methods-section .mfa-section-box:nth-child(2) {
+  background: #F0FDF4;
+  border-color: #BBF7D0;
+}
+
+.mfa-box-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mfa-box-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30.71px;
+  height: 30.71px;
+  border-radius: 7.68px;
+  color: white;
+}
+
+.mfa-icon-blue {
+  background: #3B82F6;
+}
+
+.mfa-icon-purple {
+  background: #9333EA;
+}
+
+.mfa-icon-orange {
+  background: #EA580C;
+}
+
+.mfa-icon-green {
+  background: #16A34A;
+}
+
+.mfa-box-title {
+  font-size: 15.36px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.mfa-enforcement-section .mfa-section-box:nth-child(1) .mfa-box-title {
+  color: #1E3A8A;
+}
+
+.mfa-enforcement-section .mfa-section-box:nth-child(2) .mfa-box-title {
+  color: #7C2D12;
+}
+
+.mfa-methods-section .mfa-section-box:nth-child(1) .mfa-box-title {
+  color: #581C87;
+}
+
+.mfa-methods-section .mfa-section-box:nth-child(2) .mfa-box-title {
+  color: #14532D;
+}
+
+/* Radio Options */
+.mfa-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px rgba(0, 0, 0, 0.05);
+}
+
+.mfa-option:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mfa-radio {
+  width: 15.35px;
+  height: 15.35px;
+  margin-top: 8px;
+  cursor: pointer;
+  accent-color: #0075FF;
+}
+
+.mfa-option-label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.mfa-option-title {
+  display: block;
+  font-size: 15.36px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.mfa-option-description {
+  display: block;
+  font-size: 13.44px;
+  font-weight: 400;
+  color: #4B5563;
+  line-height: 19.2px;
+}
+
+/* Checkboxes */
+.mfa-checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px rgba(0, 0, 0, 0.05);
+}
+
+.mfa-checkbox-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mfa-checkbox {
+  width: 15.35px;
+  height: 15.35px;
+  margin-top: 8px;
+  cursor: pointer;
+  accent-color: #0075FF;
+}
+
+.mfa-checkbox-label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.mfa-method-title {
+  display: block;
+  font-size: 15.36px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.mfa-method-description {
+  display: block;
+  font-size: 13.44px;
+  font-weight: 400;
+  color: #4B5563;
+  line-height: 19.2px;
+}
+
+/* Settings Groups */
+.mfa-setting-group {
+  margin-bottom: 16px;
+}
+
+.mfa-setting-group:last-child {
+  margin-bottom: 0;
+}
+
+.mfa-setting-label {
+  display: block;
+  font-size: 13.44px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.mfa-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15.36px;
+  font-weight: 400;
+  color: black;
+  background: white;
+  border: 1px #D1D5DB solid;
+  border-radius: 7.68px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mfa-select:hover {
+  border-color: #9CA3AF;
+}
+
+.mfa-select:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Impact Preview */
+.mfa-impact-preview {
+  padding: 32px;
+  background: #F9FAFB;
+  border-bottom: 1px #E5E7EB solid;
+}
+
+.mfa-impact-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.mfa-impact-header svg {
+  color: #4B5563;
+}
+
+.mfa-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mfa-impact-card {
+  background: white;
+  border: 1px #E5E7EB solid;
+  border-radius: 7.68px;
+  padding: 24px;
+  text-align: center;
+}
+
+.mfa-impact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30.71px;
+  height: 30.71px;
+  border-radius: 7.68px;
+  margin: 0 auto 12px;
+  color: white;
+}
+
+.mfa-impact-label {
+  font-size: 15.36px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.mfa-impact-value {
+  font-size: 23.04px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.mfa-impact-card:nth-child(1) .mfa-impact-value {
+  color: #2563EB;
+}
+
+.mfa-impact-card:nth-child(2) .mfa-impact-value {
+  color: #16A34A;
+}
+
+.mfa-impact-card:nth-child(3) .mfa-impact-value {
+  color: #EA580C;
+}
+
+.mfa-impact-description {
+  font-size: 13.44px;
+  font-weight: 400;
+  color: #4B5563;
+  line-height: 19.2px;
+}
+
+/* Footer */
+.mfa-footer {
+  display: flex;
+  gap: 12px;
+  padding: 24px;
+  border-top: 1px #E5E7EB solid;
+}
+
+.mfa-btn-preview,
+.mfa-btn-enable,
+.mfa-btn-save-policy {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 15.36px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7.68px;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 46px;
+}
+
+.mfa-btn-preview {
+  background: #4B5563;
+  color: white;
+}
+
+.mfa-btn-preview:hover {
+  background: #374151;
+}
+
+.mfa-btn-enable {
+  background: #EA580C;
+  color: white;
+}
+
+.mfa-btn-enable:hover {
+  background: #C2410C;
+}
+
+.mfa-btn-save-policy {
+  background: #2563EB;
+  color: white;
+}
+
+.mfa-btn-save-policy:hover {
+  background: #1D4ED8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mfa-enforcement-section,
+  .mfa-methods-section {
+    grid-template-columns: 1fr;
+  }
+
+  .mfa-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mfa-header-buttons {
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 0;
+  }
+
+  .mfa-policy-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .mfa-policy-header,
+  .mfa-warning-banner,
+  .mfa-main-card {
+    margin: 16px;
+    padding: 16px;
+  }
+
+  .mfa-header-title {
+    font-size: 18px;
+  }
+
+  .mfa-section-header,
+  .mfa-enforcement-section,
+  .mfa-methods-section,
+  .mfa-impact-preview,
+  .mfa-footer {
+    padding: 16px;
+  }
+
+  .mfa-footer {
+    flex-direction: column;
+  }
+
+  .mfa-btn-preview,
+  .mfa-btn-enable,
+  .mfa-btn-save-policy {
+    width: 100%;
+  }
+
+  .mfa-impact-grid {
+    grid-template-columns: 1fr;
+  }
+}

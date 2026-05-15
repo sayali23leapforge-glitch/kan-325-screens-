@@ -51,12 +51,13 @@ function SidebarItem({ icon, label, badge, active, muted, className = '', onClic
   )
 }
 
-function Sidebar({ sidebarOpen = false }) {
+function Sidebar({ sidebarOpen = false, onSwitchToHRM }) {
   const navigate = useNavigate()
   const location = useLocation()
   const [collapsed, setCollapsed] = useState(() => window.innerWidth <= 900)
   const [rolesOpen, setRolesOpen] = useState(true)
   const [sessionsTokensOpen, setSessionsTokensOpen] = useState(false)
+  const [moduleMenuOpen, setModuleMenuOpen] = useState(false)
 
   const handleDashboardClick = () => {
     navigate('/dashboard')
@@ -117,7 +118,7 @@ function Sidebar({ sidebarOpen = false }) {
   const isRolesPermissionsActive = location.pathname === '/roles-permissions'
   const isRoleManagementActive = location.pathname === '/roles-permissions/role-management'
   const isPermissionMatrixActive = location.pathname === '/roles-permissions/permission-matrix'
-  const isSecurityPoliciesActive = location.pathname === '/security-policies'
+  const isSecurityPoliciesActive = location.pathname === '/security-policies' || location.pathname.startsWith('/security-policies/')
   const isSessionsTokensActive = location.pathname === '/sessions-tokens'
   const isAuditLogsActive = location.pathname === '/audit-logs'
 
@@ -151,16 +152,53 @@ function Sidebar({ sidebarOpen = false }) {
           <span>Production</span>
         </div>
 
-        <button type="button" className="sidebar-organization-card">
-          <span className="org-icon">
-            <FiShield />
-          </span>
-          <span className="sidebar-organization-copy">
-            <strong>IAM Admin</strong>
-            <span>Identity & Access</span>
-          </span>
-          <FiChevronDown className="sidebar-chevron" aria-hidden="true" />
-        </button>
+        <div className="sidebar-module-dropdown">
+          <button
+            type="button"
+            className="sidebar-organization-card"
+            onClick={() => setModuleMenuOpen(!moduleMenuOpen)}
+          >
+            <span className="org-icon">
+              <FiShield />
+            </span>
+            <span className="sidebar-organization-copy">
+              <strong>IAM Admin</strong>
+              <span>Identity & Access</span>
+            </span>
+            <FiChevronDown className="sidebar-chevron" aria-hidden="true" />
+          </button>
+
+          {moduleMenuOpen && (
+            <div className="sidebar-module-menu">
+              <button
+                type="button"
+                className="sidebar-module-option"
+                onClick={() => {
+                  setModuleMenuOpen(false)
+                }}
+              >
+                <span className="module-option-icon">◆</span>
+                <span>IAM Admin</span>
+                <span className="module-option-badge">Active</span>
+              </button>
+              <button
+                type="button"
+                className="sidebar-module-option"
+                onClick={() => {
+                  setModuleMenuOpen(false)
+                  if (onSwitchToHRM) {
+                    onSwitchToHRM()
+                  } else {
+                    navigate('/hrm/dashboard')
+                  }
+                }}
+              >
+                <span className="module-option-icon">▼</span>
+                <span>HRM Module</span>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
       <nav className="sidebar-nav">

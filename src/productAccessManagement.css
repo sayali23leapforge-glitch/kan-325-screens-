@@ -1768,6 +1768,135 @@
   font-size: 12px;
 }
 
+/* Audit Log Table */
+.pam-audit-search-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+.pam-audit-table-wrapper {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pam-audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.pam-audit-table thead {
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.pam-audit-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #6B7280;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pam-audit-table tbody tr {
+  border-bottom: 1px solid #E5E7EB;
+  transition: background-color 0.2s;
+}
+
+.pam-audit-table tbody tr:hover {
+  background-color: #F9FAFB;
+}
+
+.pam-audit-table td {
+  padding: 12px 16px;
+  color: #111827;
+}
+
+.pam-timestamp {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.pam-event-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.pam-user-name {
+  font-size: 13px;
+  color: #111827;
+}
+
+.pam-resource {
+  font-family: monospace;
+  font-size: 12px;
+  background: #F3F4F6;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #374151;
+}
+
+.pam-ip-address {
+  font-family: monospace;
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.pam-audit-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pam-audit-status.critical {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.pam-audit-status.warning {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.pam-audit-status.success {
+  background: #DBEAFE;
+  color: #2563EB;
+}
+
+.pam-audit-status.failed {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.pam-export-btn {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.pam-export-btn:hover {
+  background: #F3F4F6;
+  border-color: #9CA3AF;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .pam-role-cards-grid {

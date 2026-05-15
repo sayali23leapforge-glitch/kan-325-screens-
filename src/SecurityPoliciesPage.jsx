@@ -1,229 +1,297 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import {
-  FiLock,
-  FiSmartphone,
+  FiActivity,
+  FiBell,
   FiClock,
-  FiLogIn,
-  FiWifi,
-  FiCheckCircle,
-  FiGlobe,
-  FiAlertCircle
+  FiDatabase,
+  FiLock,
+  FiMoreHorizontal,
+  FiPlus,
+  FiSettings,
+  FiShield,
+  FiShieldOff,
+  FiSmartphone,
 } from 'react-icons/fi'
 import Sidebar from './Sidebar'
-import SecurityPoliciesHeader from './SecurityPoliciesHeader'
-import SecurityHeroBanner from './SecurityHeroBanner'
-import ComplianceStatusCard from './ComplianceStatusCard'
-import PolicyCard from './PolicyCard'
-import AdditionalPolicyCard from './AdditionalPolicyCard'
-import PolicyChangeItem from './PolicyChangeItem'
-import SecurityPoliciesSP1Page from './SecurityPoliciesSP1Page'
+import PasswordPolicyConfigurationPage from './PasswordPolicyConfigurationPage'
+import EditPasswordPolicyRulesPage from './EditPasswordPolicyRulesPage'
+import MfaPolicyPage from './MfaPolicyPage'
+import PasswordPolicyRulesSavedPage from './PasswordPolicyRulesSavedPage'
+import SessionPolicyManagementPage from './SessionPolicyManagementPage'
+import TokensManagementSection from './TokensManagementSection'
+import TokenDetailsSection from './TokenDetailsSection'
 import './security-policies.css'
 
 function SecurityPoliciesPage() {
-  const [showCreateModal, setShowCreateModal] = useState(false)
-  const [currentView, setCurrentView] = useState('main')
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  // Mock data for policy cards
-  const passwordPolicyData = {
-    icon: <FiLock size={24} />,
-    title: 'Password Policy',
-    subtitle: 'Enforce strong password requirements and rotation schedules',
-    status: 'ACTIVE',
-    statusType: 'active',
-    gradient: 'gradient-purple',
-    details: [
-      { label: 'Minimum Length', value: '12 characters' },
-      { label: 'Complexity', value: 'High' },
-      { label: 'Rotation Period', value: '90 days' },
-      { label: 'History Check', value: 'Last 5' }
-    ],
-    complianceScore: 100,
-    complianceColor: 'green',
-    complianceChips: ['SOC 2', 'ISO 27001']
+  const getScreenFromPath = (pathname) => {
+    if (pathname.startsWith('/products/tokens/')) return 'token-details'
+    if (pathname === '/products/tokens') return 'tokens'
+    if (pathname === '/security-policies/session-policy') return 'session-policy'
+    if (pathname === '/security-policies/password-policy/saved') return 'password-policy-saved'
+    if (pathname === '/security-policies/password-policy/edit') return 'password-policy-edit'
+    if (pathname === '/security-policies/mfa-policy') return 'mfa-policy'
+    if (pathname === '/security-policies/password-policy') return 'password-policy'
+    return 'policies'
   }
 
-  const mfaPolicyData = {
-    icon: <FiSmartphone size={24} />,
-    title: 'MFA Policy',
-    subtitle: 'Multi-factor authentication requirements and trusted device management',
-    status: 'ACTIVE',
-    statusType: 'active',
-    gradient: 'gradient-blue',
-    details: [
-      { label: 'Enforcement', value: 'Mandatory' },
-      { label: 'Methods Allowed', value: '3 types' },
-      { label: 'Remember Device', value: '30 days' },
-      { label: 'Grace Period', value: '7 days' }
-    ],
-    complianceScore: 98,
-    complianceColor: 'green',
-    complianceChips: ['SOC 2', 'NIST']
-  }
+  const [activeScreen, setActiveScreen] = useState(() => getScreenFromPath(location.pathname))
 
-  const sessionPolicyData = {
-    icon: <FiClock size={24} />,
-    title: 'Session Policy',
-    subtitle: 'Session timeout, idle detection, and concurrent session limits',
-    status: 'REVIEW',
-    statusType: 'review',
-    gradient: 'gradient-orange',
-    details: [
-      { label: 'Max Duration', value: '8 hours' },
-      { label: 'Idle Timeout', value: '30 minutes' },
-      { label: 'Concurrent Sessions', value: '3 max' },
-      { label: 'Refresh Token', value: '7 days' }
-    ],
-    complianceScore: 85,
-    complianceColor: 'yellow',
-    complianceChips: ['SOC 2', 'ISO 27001']
-  }
+  useEffect(() => {
+    setActiveScreen(getScreenFromPath(location.pathname))
+  }, [location.pathname])
 
-  // Mock additional policy controls
-  const additionalPolicies = [
-    {
-      icon: <FiLogIn size={20} />,
-      title: 'Account Lockout Policy',
-      subtitle: 'Define thresholds for failed login attempts and lockout duration',
-      status: 'Not Configured'
-    },
-    {
-      icon: <FiWifi size={20} />,
-      title: 'IP Whitelist Policy',
-      subtitle: 'Restrict access to trusted IP addresses and networks',
-      status: 'Not Configured'
-    },
-    {
-      icon: <FiCheckCircle size={20} />,
-      title: 'Biometric Policy',
-      subtitle: 'Configure biometric authentication options and fallbacks',
-      status: 'Not Configured'
-    },
-    {
-      icon: <FiGlobe size={20} />,
-      title: 'Geo-Location Policy',
-      subtitle: 'Control access based on geographic location and travel patterns',
-      status: 'Not Configured'
+  const navigateToScreen = (screen) => {
+    const pathMap = {
+      policies: '/security-policies',
+      tokens: '/products/tokens',
+      'session-policy': '/security-policies/session-policy',
+      'mfa-policy': '/security-policies/mfa-policy',
+      'password-policy': '/security-policies/password-policy',
+      'password-policy-edit': '/security-policies/password-policy/edit',
+      'password-policy-saved': '/security-policies/password-policy/saved',
     }
+    setActiveScreen(screen)
+    navigate(pathMap[screen])
+  }
+
+  const tabs = ['Overview', 'Users', 'Roles', 'Security Policies', 'Access', 'Tokens']
+
+  const handleTabClick = (tab) => {
+    if (tab === 'Tokens') {
+      navigateToScreen('tokens')
+      return
+    }
+
+    if (tab === 'Security Policies' || tab === 'Access') {
+      navigateToScreen('policies')
+    }
+  }
+
+  const policyCards = [
+    {
+      id: 'password-policy',
+      theme: 'blue',
+      icon: <FiLock size={13} />,
+      title: 'Password Policy',
+      status: 'Active',
+      statusType: 'active',
+      description: 'Configure password complexity, expiration and account lockout requirements.',
+      rows: [['Min Length', '12'], ['Complexity', 'High'], ['Expiry', '90 days']],
+      button: 'Edit Rules',
+    },
+    {
+      id: 'mfa-policy',
+      theme: 'purple',
+      icon: <FiSmartphone size={13} />,
+      title: 'MFA Policy',
+      status: 'Active',
+      statusType: 'active',
+      description: 'Multi-factor authentication enforcement for enhanced security.',
+      rows: [['Auth Methods', '3'], ['Remember', '7 days'], ['Risk Level', 'Medium']],
+      button: 'Enable Enforcement',
+    },
+    {
+      id: 'session-policy',
+      theme: 'green',
+      icon: <FiClock size={13} />,
+      title: 'Session Policy',
+      status: 'Review',
+      statusType: 'review',
+      description: 'Session timeout and concurrent sign in controls.',
+      rows: [['Session Timeout', '30 min'], ['Idle Timeout', '15 min'], ['Max Sessions', '2']],
+      button: 'Timeout Settings',
+    },
+    {
+      id: 'access-control',
+      theme: 'red',
+      icon: <FiShieldOff size={13} />,
+      title: 'Access Control',
+      status: 'Active',
+      statusType: 'active',
+      description: 'Role based restrictions and permission matrices.',
+      rows: [['Role Matrix', 'Enabled'], ['Audit Trail', 'Enabled'], ['Policy Scope', 'Global']],
+      button: 'Configure',
+    },
+    {
+      id: 'data-retention',
+      theme: 'yellow',
+      icon: <FiDatabase size={13} />,
+      title: 'Data Retention',
+      status: 'Pending',
+      statusType: 'pending',
+      description: 'Data lifecycle management and archival compliance.',
+      rows: [['Retention Period', '2 years'], ['Backup', 'Daily'], ['Auto Cleanup', 'Enabled']],
+      button: 'Review Policy',
+    },
+    {
+      id: 'compliance',
+      theme: 'indigo',
+      icon: <FiActivity size={13} />,
+      title: 'Compliance',
+      status: 'Active',
+      statusType: 'active',
+      description: 'Regulatory compliance monitoring and controls.',
+      rows: [['Frameworks', 'SOC 2 / GDPR'], ['Last Audit', '15 days ago'], ['Risk Score', 'Low']],
+      button: 'View Report',
+    },
   ]
 
-  // Mock recent policy changes
-  const recentChanges = [
-    {
-      icon: <FiAlertCircle size={20} />,
-      title: 'Password Policy Updated',
-      description: 'Minimum password length increased from 10 to 12 characters',
-      author: 'Michael Chen',
-      timestamp: '2 hours ago'
-    },
-    {
-      icon: <FiAlertCircle size={20} />,
-      title: 'MFA Policy Enforcement Extended',
-      description: 'Grace period extended to 7 days for new user onboarding',
-      author: 'Sarah Williams',
-      timestamp: '1 day ago'
-    },
-    {
-      icon: <FiAlertCircle size={20} />,
-      title: 'Session Policy Review Scheduled',
-      description: 'Quarterly review flagged for compliance optimization',
-      author: 'System Automation',
-      timestamp: '3 days ago'
-    }
-  ]
-
-  const handleCreatePolicy = () => {
-    console.log('Create policy clicked')
-    setShowCreateModal(true)
+  const handlePolicyNavigate = (card) => {
+    if (card.id === 'password-policy') { navigateToScreen('password-policy'); return }
+    if (card.id === 'session-policy') { navigateToScreen('session-policy'); return }
+    if (card.id === 'mfa-policy') { navigateToScreen('mfa-policy') }
   }
 
-  const handleConfigure = (policyName) => {
-    console.log('Configure clicked for:', policyName)
-  }
-
-  const handleMenu = (policyName) => {
-    console.log('Menu clicked for:', policyName)
-  }
-
-  const handleAddPolicy = () => {
-    console.log('Add policy clicked')
-  }
-
-  const handleViewReport = () => {
-    console.log('View report clicked')
+  const handleEditRulesClick = (card) => {
+    if (card.id === 'password-policy') { navigateToScreen('password-policy-edit') }
+    if (card.id === 'session-policy') { navigateToScreen('session-policy') }
   }
 
   return (
-    <main className="dashboard-layout">
-      <Sidebar sidebarOpen={sidebarOpen} />
-      <div className={`sidebar-overlay ${sidebarOpen ? 'active' : ''}`} onClick={() => setSidebarOpen(false)} />
-      {currentView === 'sp1' ? (
-        <section className="dashboard-main">
-          <SecurityPoliciesSP1Page onBack={() => setCurrentView('main')} />
-        </section>
-      ) : (
-        <section className="dashboard-main security-main">
-          <SecurityPoliciesHeader
-            onCreatePolicy={handleCreatePolicy}
-            onSP1Click={() => setCurrentView('sp1')}
-            onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
-            notificationCount={12}
+    <div className="spm-page">
+      <Sidebar />
+      <main className="spm-main">
+        {activeScreen === 'password-policy-saved' ? (
+          <PasswordPolicyRulesSavedPage
+            onBackToPolicies={() => navigateToScreen('policies')}
+            onViewPolicy={() => navigateToScreen('password-policy')}
           />
-
-          <div className="security-policies-content">
-            <SecurityHeroBanner />
-
-            <ComplianceStatusCard onViewReport={handleViewReport} />
-
-            <div className="policy-cards-section">
-              <div className="policy-cards-grid">
-                <PolicyCard
-                  {...passwordPolicyData}
-                  onConfigure={() => handleConfigure('Password Policy')}
-                  onMenu={() => handleMenu('Password Policy')}
-                />
-                <PolicyCard
-                  {...mfaPolicyData}
-                  onConfigure={() => handleConfigure('MFA Policy')}
-                  onMenu={() => handleMenu('MFA Policy')}
-                />
-                <PolicyCard
-                  {...sessionPolicyData}
-                  onConfigure={() => handleConfigure('Session Policy')}
-                  onMenu={() => handleMenu('Session Policy')}
-                />
+        ) : activeScreen === 'password-policy-edit' ? (
+          <EditPasswordPolicyRulesPage
+            onBack={() => navigateToScreen('password-policy')}
+            onSave={() => navigateToScreen('password-policy-saved')}
+          />
+        ) : activeScreen === 'mfa-policy' ? (
+          <MfaPolicyPage onBack={() => navigateToScreen('policies')} />
+        ) : activeScreen === 'session-policy' ? (
+          <SessionPolicyManagementPage />
+        ) : activeScreen === 'password-policy' ? (
+          <PasswordPolicyConfigurationPage onBack={() => navigateToScreen('policies')} />
+        ) : (
+          <>
+            <header className="spm-header">
+              <div>
+                <h1 className="spm-header-title">Security Policy Management</h1>
+                <div className="spm-breadcrumbs">
+                  <span>Home</span>
+                  <span className="spm-crumb-sep">&gt;</span>
+                  <span>Security</span>
+                  <span className="spm-crumb-sep">&gt;</span>
+                  <span className="spm-crumb-active">Policies</span>
+                </div>
               </div>
-            </div>
-
-            <div className="additional-controls-section">
-              <div className="section-header">
-                <h2 className="section-title">Additional Policy Controls</h2>
-                <button className="btn-add-policy" onClick={handleAddPolicy}>
-                  + Add Policy
+              <div className="spm-header-actions">
+                <button className="spm-notify-btn" aria-label="Notifications">
+                  <FiBell size={15} />
+                  <span className="spm-notify-count">3</span>
+                </button>
+                <button className="spm-new-policy-btn">
+                  <FiPlus size={14} />
+                  New Policy
                 </button>
               </div>
-              <div className="additional-controls-grid">
-                {additionalPolicies.map((policy, idx) => (
-                  <AdditionalPolicyCard key={idx} {...policy} />
-                ))}
+            </header>
+
+            <section className="spm-suite-card">
+              <div className="spm-suite-main">
+                <div className="spm-suite-icon">
+                  <FiShield size={18} />
+                </div>
+                <div className="spm-suite-text">
+                  <h2>IAM Security Suite</h2>
+                  <p>Identity and Access Management for secure enterprise collaboration</p>
+                  <div className="spm-suite-meta">
+                    <span><i className="spm-status-dot" />Active</span>
+                    <span>Version: 3.1</span>
+                    <span>Users: 247</span>
+                  </div>
+                </div>
               </div>
+              <div className="spm-suite-actions">
+                <button className="spm-outline-btn">
+                  <FiSettings size={13} />
+                  Configure
+                </button>
+                <button className="spm-primary-btn">Save Changes</button>
+              </div>
+            </section>
+
+            <div className="spm-tabs" role="tablist" aria-label="Security tabs">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  className={`spm-tab ${
+                    activeScreen === 'tokens' || activeScreen === 'token-details'
+                      ? (tab === 'Tokens' ? 'active' : '')
+                      : (tab === 'Security Policies' ? 'active' : '')
+                  }`}
+                  onClick={() => handleTabClick(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
             </div>
 
-            <div className="recent-changes-section">
-              <h2 className="section-title">Recent Policy Changes</h2>
-              <div className="changes-list">
-                {recentChanges.map((change, idx) => (
-                  <div key={idx}>
-                    <PolicyChangeItem {...change} />
-                    {idx < recentChanges.length - 1 && <div className="divider" />}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-    </main>
+            {activeScreen === 'tokens' ? (
+              <TokensManagementSection />
+            ) : activeScreen === 'token-details' ? (
+              <TokenDetailsSection
+                tokenId={location.pathname.replace('/products/tokens/', '')}
+                onBackToTokens={() => navigateToScreen('tokens')}
+              />
+            ) : (
+              <section className="spm-policy-shell">
+                <h3>Security Policy Configuration</h3>
+                <p>Configure and manage security policies for your organization</p>
+                <div className="spm-policy-grid">
+                  {policyCards.map((card) => (
+                    <article key={card.title} className="spm-policy-card">
+                      <div className="spm-policy-card-top">
+                        <div className={`spm-card-icon ${card.theme}`}>{card.icon}</div>
+                        <span className={`spm-card-status ${card.statusType}`}>{card.status}</span>
+                      </div>
+                      <h4
+                        onClick={() => handlePolicyNavigate(card)}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handlePolicyNavigate(card) }}
+                        aria-label={`Open ${card.title}`}
+                      >
+                        {card.title}
+                      </h4>
+                      <p className="spm-card-desc">{card.description}</p>
+                      <div className="spm-card-rows">
+                        {card.rows.map(([label, value]) => (
+                          <div key={label} className="spm-card-row">
+                            <span>{label}</span>
+                            <strong>{value}</strong>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="spm-card-actions">
+                        <button
+                          className={`spm-card-action-btn ${card.theme}`}
+                          onClick={() => handleEditRulesClick(card)}
+                        >
+                          {card.button}
+                        </button>
+                        <button className="spm-card-more-btn" aria-label="More options">
+                          <FiMoreHorizontal size={14} />
+                        </button>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
+          </>
+        )}
+      </main>
+    </div>
   )
 }
 

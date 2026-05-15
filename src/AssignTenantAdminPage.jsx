@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiArrowRight, FiMenu, FiCheck, FiX, FiAlertTriangle, FiBell, FiEye } from 'react-icons/fi';
+import { FiArrowRight, FiMenu, FiX, FiAlertTriangle, FiBell, FiEye } from 'react-icons/fi';
 import Sidebar from './Sidebar';
 import './assign-tenant-admin.css';
 
@@ -187,11 +187,16 @@ const AssignTenantAdminPage = () => {
 
                 <div className="users-list">
                   {users.map(user => (
-                    <div
+                    <label
                       key={user.id}
                       className={`user-item ${selectedUserId === user.id ? 'selected' : ''}`}
-                      onClick={() => setSelectedUserId(user.id)}
                     >
+                      <input
+                        type="checkbox"
+                        checked={selectedUserId === user.id}
+                        onChange={() => setSelectedUserId(user.id)}
+                        className="user-checkbox"
+                      />
                       <img src={user.avatar} alt={user.name} className="user-avatar" />
                       <div className="user-details">
                         <div className="user-name">{user.name}</div>
@@ -203,10 +208,7 @@ const AssignTenantAdminPage = () => {
                           </span>
                         </div>
                       </div>
-                      <div className={`checkbox ${selectedUserId === user.id ? 'checked' : ''}`}>
-                        {selectedUserId === user.id && <FiCheck size={12} />}
-                      </div>
-                    </div>
+                    </label>
                   ))}
                 </div>
               </div>
