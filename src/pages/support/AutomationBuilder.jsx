@@ -232,7 +232,7 @@ function AutomationBuilder() {
 
             <div>
               <button type="button" className="automation-builder-draft-btn">Save Draft</button>
-              <button className="continue-button" onClick={() => navigate('/automation-builder/actions')}>
+              <button type="button" className="automation-builder-continue-btn" onClick={() => navigate('/automation-builder/actions')}>
                 Continue to Actions
               </button>
             </div>
