@@ -23,7 +23,7 @@
   gap: 16px;
 }
 
-.header-top {
+.users-header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,7 +31,7 @@
   gap: 12px;
 }
 
-.mobile-menu-button {
+.users-mobile-menu-button {
   display: none;
   width: 40px;
   height: 40px;
@@ -52,13 +52,13 @@
   z-index: 900;
 }
 
-.mobile-menu-button:hover {
+.users-mobile-menu-button:hover {
   background: #f3f4f6;
   color: #000000;
   border-color: #d1d5db;
 }
 
-.mobile-menu-button svg {
+.users-mobile-menu-button svg {
   width: 20px;
   height: 20px;
 }
@@ -91,11 +91,11 @@
   }
 }
 
-.header-left {
+.users-header-left {
   flex: 1;
 }
 
-.page-title {
+.users-page-title {
   font-size: 28px;
   font-weight: 700;
   color: #111827;
@@ -103,13 +103,14 @@
   letter-spacing: -0.5px;
 }
 
-.header-right {
+.users-header-right {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: 4px;
 }
 
-.btn-notifications {
+.users-btn-notifications {
   position: relative;
   width: 40px;
   height: 40px;
@@ -124,12 +125,12 @@
   transition: all 0.2s ease;
 }
 
-.btn-notifications:hover {
+.users-btn-notifications:hover {
   border-color: #D1D5DB;
   background-color: #F9FAFB;
 }
 
-.notification-badge {
+.users-notification-badge {
   position: absolute;
   top: -6px;
   right: -6px;
@@ -146,7 +147,7 @@
   border: 2px solid #FFFFFF;
 }
 
-.btn-secondary {
+.users-btn-secondary {
   padding: 9px 16px;
   background-color: #FFFFFF;
   color: #111827;
@@ -158,31 +159,40 @@
   transition: all 0.2s ease;
 }
 
-.btn-secondary:hover {
+.users-btn-secondary:hover {
   background-color: #F9FAFB;
   border-color: #9CA3AF;
 }
 
-.btn-primary {
+.users-btn-primary {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 16px;
+  justify-content: center;
+  gap: 7.67px;
+  width: 158.32px;
+  height: 46.08px;
+  padding: 0 15.35px;
   background-color: #F0A83C;
   color: #0F2C45;
   border: none;
-  border-radius: 6px;
-  font-size: 13px;
+  border-radius: 7.68px;
+  font-size: 15.36px;
   font-weight: 600;
+  line-height: 23.04px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.btn-primary:hover {
+.users-btn-primary svg {
+  width: 13.43px;
+  height: 15.36px;
+}
+
+.users-btn-primary:hover {
   background-color: #DE9F2D;
 }
 
-.btn-primary:active {
+.users-btn-primary:active {
   background-color: #CC8F1A;
 }
 
@@ -786,14 +796,14 @@
 /* ===== RESPONSIVE ===== */
 
 @media (min-width: 1025px) {
-  .mobile-menu-button {
+  .users-mobile-menu-button {
     display: none !important;
   }
 }
 
 @media (max-width: 1024px) {
-  .mobile-menu-button {
-    display: flex !important;
+  .users-mobile-menu-button {
+    display: none !important;
   }
 
   .sidebar {
@@ -816,12 +826,13 @@
     gap: 20px;
   }
 
-  .header-top {
-    flex-wrap: wrap;
+  .users-header-top {
+    flex-wrap: nowrap;
   }
 
-  .header-right {
-    width: 100%;
+  .users-header-right {
+    width: auto;
+    margin-left: auto;
     justify-content: flex-end;
   }
 
@@ -846,7 +857,7 @@
 }
 
 @media (max-width: 768px) {
-  .mobile-menu-button {
+  .users-mobile-menu-button {
     display: flex !important;
   }
 
@@ -879,17 +890,17 @@
     gap: 16px;
   }
 
-  .page-title {
+  .users-page-title {
     font-size: 24px;
   }
 
-  .header-right {
+  .users-header-right {
     flex-direction: column;
     width: 100%;
   }
 
-  .btn-primary,
-  .btn-secondary {
+  .users-btn-primary,
+  .users-btn-secondary {
     width: 100%;
   }
 
@@ -938,7 +949,7 @@
 }
 
 @media (max-width: 600px) {
-  .mobile-menu-button {
+  .users-mobile-menu-button {
     display: flex !important;
   }
 
@@ -947,7 +958,7 @@
     gap: 12px;
   }
 
-  .page-title {
+  .users-page-title {
     font-size: 20px;
   }
 
@@ -1459,3 +1470,6 @@
     font-size: 12px;
   }
 }
+
+
+

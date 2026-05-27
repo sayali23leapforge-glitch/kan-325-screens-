@@ -134,18 +134,6 @@ const AssignTenantAdminPage = () => {
             <button className="back-button" onClick={handleBack} title="Back">←</button>
             <h1>Assign Tenant Admin</h1>
           </div>
-          
-          <div className="header-breadcrumb">
-            <span className="breadcrumb-item">Home</span>
-            <span className="breadcrumb-separator">/</span>
-            <span className="breadcrumb-item">IAM</span>
-            <span className="breadcrumb-separator">/</span>
-            <span className="breadcrumb-item">Tenants</span>
-            <span className="breadcrumb-separator">/</span>
-            <span className="breadcrumb-item">Acme<br/>Corporation</span>
-            <span className="breadcrumb-separator">/</span>
-            <span className="breadcrumb-item-current">Assign Admin</span>
-          </div>
 
           <div className="header-right">
             <button className="notification-button">

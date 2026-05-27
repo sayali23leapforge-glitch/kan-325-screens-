@@ -1,0 +1,524 @@
+.taa-page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #F9FAFB;
+}
+
+.taa-main {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.taa-header {
+  height: 89px;
+  border-bottom: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 31px;
+}
+
+.taa-title {
+  margin: 0;
+  font-size: 23px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.taa-header-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.taa-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.taa-breadcrumbs .crumb.link {
+  color: #2563EB;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.taa-breadcrumbs .sep {
+  color: #9CA3AF;
+  font-size: 11px;
+}
+
+.taa-breadcrumbs .crumb.current {
+  color: #4B5563;
+  font-weight: 400;
+}
+
+.taa-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.taa-bell-btn {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 8px;
+  background: #F3F4F6;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.taa-badge {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: 19px;
+  height: 19px;
+  border-radius: 999px;
+  background: #EF4444;
+  color: #fff;
+  font-size: 11px;
+  line-height: 19px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.taa-assign-btn {
+  border: 0;
+  border-radius: 8px;
+  height: 42px;
+  padding: 0 22px;
+  background: #F0A83C;
+  color: #0F2C45;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.taa-content {
+  padding: 31px;
+}
+
+.taa-tenant-card {
+  height: 125px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 24px;
+}
+
+.taa-tenant-logo {
+  width: 61px;
+  height: 61px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3B82F6 0%, #9333EA 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 27px;
+  color: #fff;
+}
+
+.taa-tenant-info h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 19px;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+.taa-tenant-info p {
+  margin: 2px 0 0;
+  color: #4B5563;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.taa-tenant-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.taa-tenant-badges .plan,
+.taa-tenant-badges .active {
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.taa-tenant-badges .plan {
+  background: #F3E8FF;
+  color: #6B21A8;
+}
+
+.taa-tenant-badges .active {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.taa-tenant-badges .count {
+  color: #4B5563;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.taa-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 727px 352px;
+  gap: 24px;
+}
+
+.taa-users-card,
+.taa-roles-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  min-height: 908px;
+}
+
+.taa-users-header {
+  border-bottom: 1px solid #E5E7EB;
+  padding: 23px;
+}
+
+.taa-users-header h3,
+.taa-roles-top h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+.taa-search-wrap {
+  margin-top: 16px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  color: #9CA3AF;
+}
+
+.taa-search-wrap input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-size: 15px;
+  color: #111827;
+}
+
+.taa-search-wrap input::placeholder {
+  color: #9CA3AF;
+}
+
+.taa-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.filter-btn {
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  background: #fff;
+  height: 34px;
+  padding: 0 16px;
+  font-size: 13px;
+  color: #111827;
+}
+
+.clear-filter {
+  border: 0;
+  background: transparent;
+  color: #2563EB;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.taa-user-list {
+  min-height: 620px;
+}
+
+.taa-user-row {
+  min-height: 89px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 15px;
+  border-bottom: 1px solid #F3F4F6;
+  cursor: pointer;
+}
+
+.taa-user-row.selected {
+  background: #EFF6FF;
+}
+
+.taa-user-row input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+}
+
+.taa-user-row .avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #3B82F6 0%, #9333EA 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.taa-user-row .info {
+  flex: 1;
+}
+
+.taa-user-row .name {
+  color: #111827;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+.taa-user-row .email {
+  color: #4B5563;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.taa-user-row .meta {
+  color: #6B7280;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.taa-user-row .status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 500;
+}
+
+.taa-user-row .status.active {
+  color: #166534;
+  background: #DCFCE7;
+}
+
+.taa-user-row .status.pending {
+  color: #854D0E;
+  background: #FEF9C3;
+}
+
+.taa-users-footer {
+  height: 51px;
+  border-top: 1px solid #E5E7EB;
+  background: #F9FAFB;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #4B5563;
+  font-size: 13px;
+}
+
+.taa-users-footer .actions {
+  display: flex;
+  gap: 12px;
+}
+
+.taa-users-footer .actions button {
+  border: 0;
+  background: transparent;
+  color: #2563EB;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.taa-roles-top {
+  border-bottom: 1px solid #E5E7EB;
+  padding: 23px;
+}
+
+.role-options {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.role-option {
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 16px 18px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.role-option.active {
+  background: #EFF6FF;
+}
+
+.role-option input {
+  margin-top: 4px;
+}
+
+.role-option .icon {
+  color: #2563EB;
+  margin-top: 2px;
+}
+
+.role-option .text strong {
+  display: block;
+  color: #111827;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+.role-option .text small {
+  color: #4B5563;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.taa-summary-block {
+  padding: 24px;
+}
+
+.taa-summary-block h4 {
+  margin: 0;
+  color: #111827;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+.summary-role {
+  margin-top: 14px;
+  border: 1px solid #BFDBFE;
+  background: #EFF6FF;
+  border-radius: 8px;
+  padding: 14px;
+  color: #1E40AF;
+  display: flex;
+  gap: 10px;
+  align-items: start;
+}
+
+.summary-role strong {
+  display: block;
+  font-size: 15px;
+  line-height: 23px;
+}
+
+.summary-users {
+  margin-top: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.summary-users span {
+  color: #374151;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.important-box {
+  margin-top: 14px;
+  border: 1px solid #FEF08A;
+  background: #FEFCE8;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.important-box strong {
+  color: #854D0E;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 600;
+}
+
+.important-box p {
+  margin: 4px 0 0;
+  color: #A16207;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.summary-meta {
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.summary-meta > div {
+  display: flex;
+  justify-content: space-between;
+  color: #4B5563;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.summary-meta b {
+  color: #111827;
+  font-weight: 500;
+}
+
+.confirm-btn {
+  margin-top: 14px;
+  width: 100%;
+  height: 46px;
+  border: 0;
+  border-radius: 8px;
+  background: #F0A83C;
+  color: #0F2C45;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (max-width: 1280px) {
+  .taa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taa-users-card,
+  .taa-roles-card {
+    min-height: auto;
+  }
+}
