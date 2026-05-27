@@ -1,213 +1,198 @@
-import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import Sidebar from './Sidebar';
-import './role-details.css';
-import { FiArrowLeft, FiShare2, FiMoreVertical } from 'react-icons/fi';
+import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import {
+  FiActivity,
+  FiBarChart2,
+  FiBell,
+  FiCopy,
+  FiDownload,
+  FiEdit2,
+  FiLock,
+  FiPlus,
+  FiShield,
+  FiTrash2,
+  FiUserPlus,
+} from 'react-icons/fi'
+import Sidebar from './Sidebar'
+import './role-details.css'
 
-const RoleDetailsPage = () => {
-  const navigate = useNavigate();
-  const { role } = useParams();
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+function RoleDetailsPage() {
+  const navigate = useNavigate()
+  const { role = 'super-admin' } = useParams()
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
-  // Role metadata mapping
-  const roleMetadata = {
+  const roleMap = {
     'super-admin': {
       name: 'Super Admin',
-      description: 'Full system access with all permissions',
-      icon: '🔴',
-      iconBg: '#FEE2E2',
-      type: 'System',
-      status: 'Active',
-      usersCount: 12,
-      permissionsCount: 156,
+      subtitle: 'Full system access with all permissions',
+      usersAssigned: 12,
+      permissions: 156,
       created: 'Jan 15, 2024',
-      modified: 'Mar 20, 2025',
+      modified: 'Mar 20, 2024',
     },
     'tenant-admin': {
       name: 'Tenant Admin',
-      description: 'Administrative access permissions',
-      icon: '👤',
-      iconBg: '#DBEAFE',
-      type: 'System',
-      status: 'Active',
-      usersCount: 24,
-      permissionsCount: 128,
-      created: 'Feb 01, 2024',
-      modified: 'Mar 15, 2025',
+      subtitle: 'Administrative role for tenant resources',
+      usersAssigned: 24,
+      permissions: 128,
+      created: 'Feb 10, 2024',
+      modified: 'Mar 22, 2024',
     },
-    'developer': {
-      name: 'Developer',
-      description: 'API and integration access',
-      icon: '👨‍💻',
-      iconBg: '#DCFCE7',
-      type: 'Custom',
-      status: 'Active',
-      usersCount: 45,
-      permissionsCount: 89,
-      created: 'Mar 10, 2024',
-      modified: 'Mar 18, 2025',
-    },
-    'manager': {
+    manager: {
       name: 'Manager',
-      description: 'Team management access',
-      icon: '👨‍💼',
-      iconBg: '#F3E8FF',
-      type: 'Custom',
-      status: 'Pending',
-      usersCount: 12,
-      permissionsCount: 67,
-      created: 'Apr 05, 2024',
-      modified: 'Mar 19, 2025',
+      subtitle: 'Team management access',
+      usersAssigned: 12,
+      permissions: 67,
+      created: 'Apr 03, 2024',
+      modified: 'May 02, 2024',
     },
-  };
+    developer: {
+      name: 'Developer',
+      subtitle: 'API and integration access',
+      usersAssigned: 45,
+      permissions: 89,
+      created: 'Mar 06, 2024',
+      modified: 'Apr 12, 2024',
+    },
+  }
 
-  const meta = roleMetadata[role] || roleMetadata['super-admin'];
+  const currentRole = roleMap[role] || roleMap['super-admin']
 
-  const quickActions = [
-    { icon: '👥', label: 'Assign Users' },
-    { icon: '📋', label: 'Duplicate Role' },
-    { icon: '📤', label: 'Export Details' },
-    { icon: '🗑️', label: 'Delete Role' },
-  ];
-
-  const recentActivity = [
-    { color: '#3B82F6', title: 'Admin role updated', time: '2 hours ago by Michael Chen' },
-    { color: '#22C55E', title: 'Permission added: Create Reports', time: '5 hours ago by Sarah Johnson' },
-    { color: '#F97316', title: 'User assigned to role', time: 'Yesterday by System' },
-  ];
-
-  const usageStats = [
-    { label: 'Permission Coverage', percentage: 85, color: '#22C55E' },
-    { label: 'User Capacity', percentage: 72, color: '#3B82F6' },
-    { label: 'Active Sessions', percentage: 56, color: '#9333EA' },
-  ];
-
-  const permissionGroups = [
+  const permissions = [
     {
-      name: 'User Management',
+      group: 'User Management',
+      count: '8 permissions',
+      colorClass: 'rdv-group-blue',
       items: ['Create Users', 'Edit Users', 'Delete Users', 'View Users'],
     },
     {
-      name: 'Role Management',
+      group: 'Role Management',
+      count: '6 permissions',
+      colorClass: 'rdv-group-purple',
       items: ['Create Roles', 'Edit Roles', 'Delete Roles', 'Assign Roles'],
     },
     {
-      name: 'Tenant Management',
+      group: 'Tenant Management',
+      count: '5 permissions',
+      colorClass: 'rdv-group-green',
       items: ['Create Tenants', 'Edit Tenants', 'Delete Tenants', 'View Tenants'],
     },
     {
-      name: 'Security & Audit',
-      items: ['View Audit Logs', 'Manage Security Policies', 'Configure MFA', 'Manage Tokens'],
+      group: 'Security & Audit',
+      count: '4 permissions',
+      colorClass: 'rdv-group-red',
+      items: ['View Audit Logs', 'Manage Policies', 'Security Settings', 'System Config'],
     },
-  ];
+  ]
 
-  const assignedUsers = [
-    { id: 1, name: 'Michael Chen', email: 'michael@company.com', tenant: 'Acme Corp', status: 'Active', avatar: '👨' },
-    { id: 2, name: 'Sarah Johnson', email: 'sarah@company.com', tenant: 'Tech Solutions', status: 'Active', avatar: '👩' },
-    { id: 3, name: 'David Martinez', email: 'david@company.com', tenant: 'Global Systems', status: 'Active', avatar: '👨' },
-  ];
+  const users = [
+    { name: 'Michael Chen', email: 'michael.chen@company.com', tenant: 'Global Admin', status: 'Active', initials: 'MC' },
+    { name: 'Sarah Johnson', email: 'sarah.j@company.com', tenant: 'Acme Corp', status: 'Active', initials: 'SJ' },
+    { name: 'David Martinez', email: 'd.martinez@company.com', tenant: 'TechStart Inc', status: 'Active', initials: 'DM' },
+  ]
 
   return (
     <main className="dashboard-layout">
-      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} activeMenu="role-management" />
-      
-      <section className="dashboard-main">
-        {/* Header */}
-        <div className="rd-header-fixed">
-          <div className="rd-header-left">
-            <button className="rd-back-btn" onClick={() => navigate('/roles-permissions/role-management')}>
-              <FiArrowLeft size={20} />
-            </button>
-            <div className="rd-header-title">
-              <h1>{meta.name}</h1>
-              <p>{meta.description}</p>
+      <Sidebar sidebarOpen={sidebarOpen} />
+      <div className={`sidebar-overlay ${sidebarOpen ? 'active' : ''}`} onClick={() => setSidebarOpen(false)} />
+
+      <section className="dashboard-main rdv-main">
+        <header className="rdv-header">
+          <div>
+            <h1>Role Details</h1>
+            <div className="rdv-breadcrumb">
+              <span>Home</span>
+              <span>&gt;</span>
+              <span>Roles</span>
+              <span>&gt;</span>
+              <span>{currentRole.name}</span>
             </div>
           </div>
-          <div className="rd-breadcrumb">
-            <a href="#" className="rd-breadcrumb-item">Home</a>
-            <span className="rd-breadcrumb-sep">/</span>
-            <a href="#" className="rd-breadcrumb-item">IAM</a>
-            <span className="rd-breadcrumb-sep">/</span>
-            <a href="#" className="rd-breadcrumb-item">Roles & Permissions</a>
-            <span className="rd-breadcrumb-sep">/</span>
-            <span className="rd-breadcrumb-current">{meta.name}</span>
-          </div>
-          <div className="rd-header-actions">
-            <button className="rd-icon-btn" title="Share">
-              <FiShare2 size={18} />
-            </button>
-            <button className="rd-icon-btn" title="More">
-              <FiMoreVertical size={18} />
-            </button>
-            <button className="rd-btn-save" onClick={() => navigate(`/roles-permissions/role-management/${role}/edit`)}>Edit Role</button>
-          </div>
-        </div>
 
-        {/* Content */}
-        <div className="rd-page-content">
-          <div className="rd-main-column">
-            {/* Role Details Card */}
-            <div className="rd-card rd-role-details-card">
-              <div className="rd-role-header">
-                <div className="rd-role-icon" style={{ backgroundColor: meta.iconBg }}>
-                  {meta.icon}
+          <div className="rdv-header-actions">
+            <button type="button" className="rdv-notify-btn">
+              <FiBell size={14} />
+              <span>3</span>
+            </button>
+            <button type="button" className="rdv-edit-btn" onClick={() => navigate(`/roles-permissions/role-management/${role}/edit`)}>
+              <FiEdit2 size={14} />
+              Edit Role
+            </button>
+          </div>
+        </header>
+
+        <div className="rdv-content-grid">
+          <div className="rdv-left">
+            <section className="rdv-card rdv-role-card">
+              <div className="rdv-role-head">
+                <div className="rdv-role-icon">
+                  <FiShield size={22} />
                 </div>
-                <div className="rd-role-info">
-                  <h2>{meta.name}</h2>
-                  <p>{meta.description}</p>
-                  <div className="rd-role-badges">
-                    <span className="rd-badge rd-badge-active">Active</span>
-                    <span className="rd-badge rd-badge-system">{meta.type} Role</span>
+                <div>
+                  <h2>{currentRole.name}</h2>
+                  <p>{currentRole.subtitle}</p>
+                  <div className="rdv-role-tags">
+                    <span className="rdv-tag-active">Active</span>
+                    <span className="rdv-tag-system">System Role</span>
                   </div>
                 </div>
               </div>
-              <div className="rd-role-stats-summary">
-                <div className="rd-stat-item">
-                  <div className="rd-stat-label">Users Assigned</div>
-                  <div className="rd-stat-value">{meta.usersCount}</div>
-                </div>
-                <div className="rd-stat-item">
-                  <div className="rd-stat-label">Permissions</div>
-                  <div className="rd-stat-value">{meta.permissionsCount}</div>
-                </div>
-                <div className="rd-stat-item">
-                  <div className="rd-stat-label">Created</div>
-                  <div className="rd-stat-value">{meta.created}</div>
-                </div>
-                <div className="rd-stat-item">
-                  <div className="rd-stat-label">Last Modified</div>
-                  <div className="rd-stat-value">{meta.modified}</div>
-                </div>
-              </div>
-            </div>
 
-            {/* Permissions Section */}
-            <div className="rd-permissions-section">
-              <div className="rd-section-header">
-                <h3>Permissions</h3>
-                <button className="rd-add-permission-btn">+ Add Permission</button>
+              <div className="rdv-summary-row">
+                <div>
+                  <label>Users Assigned</label>
+                  <strong>{currentRole.usersAssigned}</strong>
+                </div>
+                <div>
+                  <label>Permissions</label>
+                  <strong>{currentRole.permissions}</strong>
+                </div>
+                <div>
+                  <label>Created</label>
+                  <strong>{currentRole.created}</strong>
+                </div>
+                <div>
+                  <label>Last Modified</label>
+                  <strong>{currentRole.modified}</strong>
+                </div>
               </div>
-              <div className="rd-permission-groups">
-                {permissionGroups.map((group, idx) => (
-                  <div key={idx} className="rd-permission-group">
-                    <h4>{group.name}</h4>
-                    <div className="rd-permission-items">
-                      {group.items.map((item, itemIdx) => (
-                        <div key={itemIdx} className="rd-permission-item">
+            </section>
+
+            <section className="rdv-card">
+              <div className="rdv-section-head">
+                <h3>Permissions</h3>
+                <button type="button" className="rdv-add-btn"><FiPlus size={12} /> Add Permission</button>
+              </div>
+
+              <div className="rdv-groups">
+                {permissions.map((group) => (
+                  <article className="rdv-group" key={group.group}>
+                    <div className="rdv-group-head">
+                      <div className="rdv-group-title-wrap">
+                        <span className={`rdv-group-icon ${group.colorClass}`}>
+                          <FiLock size={12} />
+                        </span>
+                        <h4>{group.group}</h4>
+                      </div>
+                      <span>{group.count}</span>
+                    </div>
+
+                    <div className="rdv-perm-grid">
+                      {group.items.map((item) => (
+                        <label key={item}>
                           <input type="checkbox" checked readOnly />
                           <span>{item}</span>
-                        </div>
+                        </label>
                       ))}
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
-            </div>
+            </section>
 
-            {/* Assigned Users Section */}
-            <div className="rd-assigned-users-section">
-              <h3>Assigned Users ({assignedUsers.length})</h3>
-              <table className="rd-users-table">
+            <section className="rdv-card">
+              <h3 className="rdv-users-title">Assigned Users ({users.length})</h3>
+              <table className="rdv-users-table">
                 <thead>
                   <tr>
                     <th>User</th>
@@ -217,85 +202,52 @@ const RoleDetailsPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {assignedUsers.map((user) => (
-                    <tr key={user.id}>
+                  {users.map((u) => (
+                    <tr key={u.email}>
                       <td>
-                        <div className="rd-user-cell">
-                          <div className="rd-user-avatar">{user.avatar}</div>
-                          <span>{user.name}</span>
+                        <div className="rdv-user-cell">
+                          <span>{u.initials}</span>
+                          <strong>{u.name}</strong>
                         </div>
                       </td>
-                      <td>{user.email}</td>
-                      <td>{user.tenant}</td>
-                      <td>
-                        <span className="rd-status-badge rd-status-active">{user.status}</span>
-                      </td>
+                      <td>{u.email}</td>
+                      <td>{u.tenant}</td>
+                      <td><span className="rdv-status">{u.status}</span></td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            </div>
+            </section>
           </div>
 
-          {/* Right Sidebar */}
-          <div className="rd-sidebar-column">
-            {/* Quick Actions */}
-            <div className="rd-card rd-quick-actions-card">
+          <aside className="rdv-right">
+            <section className="rdv-card">
               <h3>Quick Actions</h3>
-              <div className="rd-actions-list">
-                {quickActions.map((action, idx) => (
-                  <button key={idx} className="rd-action-item">
-                    <span className="rd-action-icon">{action.icon}</span>
-                    <span className="rd-action-label">{action.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
+              <button type="button" className="rdv-action"><FiUserPlus size={13} /> Assign Users</button>
+              <button type="button" className="rdv-action"><FiCopy size={13} /> Duplicate Role</button>
+              <button type="button" className="rdv-action"><FiDownload size={13} /> Export Details</button>
+              <button type="button" className="rdv-action rdv-danger"><FiTrash2 size={13} /> Delete Role</button>
+            </section>
 
-            {/* Recent Activity */}
-            <div className="rd-card rd-recent-activity-card">
+            <section className="rdv-card">
               <h3>Recent Activity</h3>
-              <div className="rd-activity-list">
-                {recentActivity.map((activity, idx) => (
-                  <div key={idx} className="rd-activity-item">
-                    <div className="rd-activity-dot" style={{ backgroundColor: activity.color }}></div>
-                    <div className="rd-activity-content">
-                      <div className="rd-activity-title">{activity.title}</div>
-                      <div className="rd-activity-time">{activity.time}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+              <div className="rdv-activity-item"><span className="rdv-activity-dot blue"></span><div><strong>User assigned</strong><p>Sarah Johnson added</p><em>2 hours ago</em></div></div>
+              <div className="rdv-activity-item"><span className="rdv-activity-dot green"></span><div><strong>Permission updated</strong><p>Security settings modified</p><em>5 hours ago</em></div></div>
+              <div className="rdv-activity-item"><span className="rdv-activity-dot purple"></span><div><strong>Role modified</strong><p>Description updated</p><em>1 day ago</em></div></div>
+              <div className="rdv-activity-item"><span className="rdv-activity-dot orange"></span><div><strong>Security audit</strong><p>Permissions reviewed</p><em>3 days ago</em></div></div>
+            </section>
 
-            {/* Usage Statistics */}
-            <div className="rd-card rd-usage-stats-card">
+            <section className="rdv-card">
               <h3>Usage Statistics</h3>
-              <div className="rd-stats-list">
-                {usageStats.map((stat, idx) => (
-                  <div key={idx} className="rd-stat-progress">
-                    <div className="rd-stat-header">
-                      <span>{stat.label}</span>
-                      <span className="rd-stat-percent">{stat.percentage}%</span>
-                    </div>
-                    <div className="rd-progress-bar">
-                      <div
-                        className="rd-progress-fill"
-                        style={{
-                          width: `${stat.percentage}%`,
-                          backgroundColor: stat.color,
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+              <div className="rdv-progress"><div><span>Permission Coverage</span><strong>100%</strong></div><i><b className="green" style={{ width: '100%' }}></b></i></div>
+              <div className="rdv-progress"><div><span>User Capacity</span><strong>48%</strong></div><i><b className="blue" style={{ width: '48%' }}></b></i></div>
+              <div className="rdv-progress"><div><span>Active Sessions</span><strong>75%</strong></div><i><b className="purple" style={{ width: '75%' }}></b></i></div>
+            </section>
+          </aside>
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default RoleDetailsPage;
+export default RoleDetailsPage

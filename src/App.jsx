@@ -1,9 +1,11 @@
 import { Navigate, Route, Routes, useNavigate, useParams } from 'react-router-dom'
+import { useState } from 'react'
 import Login from './Login'
 import Organization from './Organization'
 import Loading from './Loading'
 import Products from './Products'
 import Dashboard from './Dashboard'
+import IAMDashboard1 from './IAMDashboard1'
 import ApplicationsPage from './ApplicationsPage'
 import ProductsApplicationsPage from './ProductsApplicationsPage'
 import ProductsAppsPro2Page from './ProductsAppsPro2Page'
@@ -26,6 +28,7 @@ import EditProfilePage from './EditProfilePage'
 import RolesPermissionsPage from './RolesPermissionsPage'
 import RolesPermissionsEditorPage from './RolesPermissionsEditorPage'
 import RoleManagementPage from './RoleManagementPage'
+import ProductSelectionPage from './ProductSelectionPage'
 import RoleDetailsPage from './RoleDetailsPage'
 import EditSuperAdminRolePage from './EditSuperAdminRolePage'
 import EditAdminRolePage from './EditAdminRolePage'
@@ -39,10 +42,13 @@ import SecurityPoliciesPage from './SecurityPoliciesPage'
 import SessionsTokensPage from './SessionsTokensPage'
 import ViewSessionsPage from './ViewSessionsPage'
 import RevokeSessionPage from './RevokeSessionPage'
+import SessionTerminatedPage from './SessionTerminatedPage'
+import TokenDetailsPage from './TokenDetailsPage'
 import AuditLogsPage from './AuditLogsPage'
 import AuditLogPage from './AuditLogPage'
 import SystemSettingsPage from './SystemSettingsPage'
 import NotificationsPage from './NotificationsPage'
+import SecurityAlertsPage from './SecurityAlertsPage'
 import TenantsPage from './TenantsPage'
 import TenantDetailsPage from './TenantDetailsPage'
 import CreateTenantPage from './CreateTenantPage'
@@ -121,12 +127,20 @@ import ReportsAnalyticsPage from './ReportsAnalyticsPage'
 import SettingsPage from './SettingsPage'
 import AuditTrailPage from './AuditTrailPage'
 import AuditModulePage from './AuditModulePage'
+import ProductEnablementPage from './ProductEnablementPage'
+import TenantProductEnablementPage from './TenantProductEnablementPage'
+import TenantAdminAssignmentPage from './TenantAdminAssignmentPage'
+import TenantSubscriptionConfigurationPage from './TenantSubscriptionConfigurationPage'
+import TenantSubscriptionSettingsPage from './TenantSubscriptionSettingsPage'
 import DefineActions from './pages/support/DefineActions';
 import PreviewExecution from './pages/support/PreviewExecution';
 import ActivateRule from './pages/support/ActivateRule';
 
 function App() {
   const navigate = useNavigate()
+
+  // Used to force IAM dashboard view when navigating from sidebar
+  const [forceIAMDashboard, setForceIAMDashboard] = useState(false)
 
   return (
     <Routes>
@@ -148,7 +162,10 @@ function App() {
       />
       <Route path="/loading" element={<Loading />} />
       <Route path="/products" element={<Products />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route
+        path="/dashboard"
+        element={<Dashboard />}
+      />
       <Route path="/applications" element={<ApplicationsPage />} />
       <Route path="/products-applications" element={<ProductsApplicationsPage />} />
       <Route path="/products-applications/pro-2" element={<ProductsAppsPro2Page />} />
@@ -168,6 +185,10 @@ function App() {
       <Route path="/tenants/create/activate" element={<ActivateTenantPage />} />
       <Route path="/tenants/create" element={<CreateTenantPage />} />
       <Route path="/tenants/:id/audit-log" element={<AuditLogPage />} />
+      <Route path="/tenants/:id/manage-products" element={<TenantProductEnablementPage />} />
+      <Route path="/tenants/:id/admin-assignment" element={<TenantAdminAssignmentPage />} />
+      <Route path="/tenants/:id/subscription" element={<TenantSubscriptionConfigurationPage />} />
+      <Route path="/tenants/:id/subscription/settings" element={<TenantSubscriptionSettingsPage />} />
       <Route path="/tenants/:id" element={<TenantDetailsPage />} />
       <Route path="/tenants" element={<TenantsPage />} />
       <Route path="/users/create/form" element={<CreateUserFormPage />} />
@@ -188,6 +209,7 @@ function App() {
       <Route path="/roles-permissions/permission-matrix/:role" element={<PermissionMatrixRoleDetailPageWrapper />} />
       <Route path="/roles-permissions" element={<RolesPermissionsPage />} />
       <Route path="/roles-permissions-editor" element={<RolesPermissionsEditorPage />} />
+      <Route path="/product-selection" element={<ProductSelectionPage />} />
       <Route path="/security-policies" element={<SecurityPoliciesPage />} />
       <Route path="/security-policies/session-policy" element={<SecurityPoliciesPage />} />
       <Route path="/security-policies/mfa-policy" element={<SecurityPoliciesPage />} />
@@ -198,10 +220,13 @@ function App() {
       <Route path="/products/tokens/:id" element={<SecurityPoliciesPage />} />
       <Route path="/view-sessions" element={<ViewSessionsPage />} />
       <Route path="/view-sessions/revoke/:sessionId" element={<RevokeSessionPage />} />
+      <Route path="/view-sessions/session-terminated" element={<SessionTerminatedPage />} />
+      <Route path="/view-sessions/session-terminated/token/prod" element={<TokenDetailsPage />} />
       <Route path="/sessions-tokens" element={<SessionsTokensPage />} />
       <Route path="/audit-logs" element={<AuditLogsPage />} />
       <Route path="/system-settings" element={<SystemSettingsPage />} />
       <Route path="/notifications" element={<NotificationsPage />} />
+      <Route path="/security-alerts" element={<SecurityAlertsPage />} />
       <Route path="/hrm/dashboard" element={<HRMDashboard />} />
       <Route path="/hrm/onboarding-2" element={<OnboardingDashboard />} />
       <Route path="/hrm/onboarding/new-task" element={<CreateOnboardingTask />} />
@@ -350,6 +375,7 @@ function App() {
       <Route path="/support-desk/audit-trail" element={<AuditTrailPage />} />
       <Route path="/audit-module" element={<AuditModulePage />} />
       <Route path="/notification-center" element={<NotificationCenter />} />
+      <Route path="/product-enablement" element={<ProductEnablementPage />} />
     </Routes>
   )
 }

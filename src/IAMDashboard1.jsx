@@ -173,13 +173,6 @@ function IAMDashboard1({ setDashboardView }) {
       {/* Header */}
       <div className="iam-header">
         <h1 className="iam-title">IAM Dashboard</h1>
-        <div className="iam-breadcrumb">
-          <span className="breadcrumb-link">Home</span>
-          <span className="breadcrumb-dot">›</span>
-          <span className="breadcrumb-link">IAM</span>
-          <span className="breadcrumb-dot">›</span>
-          <span className="breadcrumb-current">Dashboard</span>
-        </div>
         <button className="btn-new-tenant">
           <span>New Tenant</span>
         </button>

@@ -168,7 +168,7 @@ function UsersManagementPage() {
   }
 
   const handleCreateUser = () => {
-    navigate('/users/create')
+    navigate('/users/create/form')
   }
 
   const handleBulkImport = () => {
